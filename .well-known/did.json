@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
+  ],
+  "id": "did:web:jacqueslatour.ca",
+  "verificationMethod": [
+    {
+      "id": "did:web:jacqueslatour.ca#key-1",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:jacqueslatour.ca",
+      "publicKeyJwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "YOUR_PUBLIC_KEY_X_VALUE",
+        "y": "YOUR_PUBLIC_KEY_Y_VALUE"
+      }
+    }
+  ],
+  "authentication": [
+    "did:web:jacqueslatour.ca#key-1"
+  ],
+  "assertionMethod": [
+    "did:web:jacqueslatour.ca#key-1"
+  ]
+}
