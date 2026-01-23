@@ -1,2 +1,2 @@
-# -jacqueslatour.ca
+# jacqueslatour.ca
 My did:web
