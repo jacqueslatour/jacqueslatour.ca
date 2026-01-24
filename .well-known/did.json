@@ -11,9 +11,9 @@
       "controller": "did:web:jacqueslatour.ca",
       "publicKeyJwk": {
         "kty": "EC",
-        "crv": "P-256",
-        "x": "YOUR_PUBLIC_KEY_X_VALUE",
-        "y": "YOUR_PUBLIC_KEY_Y_VALUE"
+        "x": "f0AUpL5ZdWzCNsf1mh_RttePskTIyBW5gubYVALjHRY",
+        "y": "ITNHs6MULrwffF_01iygvIP489bpE8wTV-XCXMSTUwI",
+        "crv": "P-256"
       }
     }
   ],
