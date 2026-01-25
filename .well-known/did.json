@@ -22,9 +22,7 @@
   ],
   "assertionMethod": [
     "did:web:jacqueslatour.ca#key-1"
-  ]
-}
-{
+  ],
   "dnsSecAnchor": {
     "type": "DNSSECTrustAnchor",
     "domain": "jacqueslatour.ca",
