@@ -33,9 +33,11 @@
     "created": "2026-01-25T00:00:00Z",
     "note": "Self-sovereign DNSSEC trust anchor - no ICANN dependency"
   }
-  {
-    "id": "did:web:jacqueslatour.ca#trust-registry",
-    "type": "TrustRegistry",
-    "serviceEndpoint": "did:web:suppliers.trustregistry.nborbit.ca"
-  },
+   "service": [
+    {
+      "id": "did:web:jacqueslatour.ca#trust-registry",
+      "type": "TrustRegistry",
+      "serviceEndpoint": "did:web:suppliers.trustregistry.nborbit.ca"
+    }
+  ]
 }
