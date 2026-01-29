@@ -32,8 +32,8 @@
     "digest": "F8A047A4140AE2B47272DDE1A40C87ED0ABBEAF8AC24A5AE7039B1DDB03370C8A043684AE72B9B5DB2FFC1CDB3DAEE1A",
     "created": "2026-01-25T00:00:00Z",
     "note": "Self-sovereign DNSSEC trust anchor - no ICANN dependency"
-  }
-   "service": [
+  },
+  "service": [
     {
       "id": "did:web:jacqueslatour.ca#trust-registry",
       "type": "TrustRegistry",
