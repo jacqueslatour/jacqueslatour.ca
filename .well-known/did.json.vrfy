@@ -3,25 +3,25 @@
   "type": "VerifiableDocumentSignature",
   "payload": {
     "did": "did:web:jacqueslatour.ca",
-    "documentHash": "9ea00933acf55ade33bdce7b08ad4228bff79f922a1e974fd3c76db9c62c232d",
+    "documentHash": "b0257dfd324d85a98da3822484e3e3158fdb641d065e167dc9b8edd121db384f",
     "hashAlgorithm": "SHA-256",
-    "timestamp": "2026-01-29T20:45:33.856421Z",
+    "timestamp": "2026-01-30T15:47:28.324809Z",
     "fileName": "did.json",
-    "fileSize": 1208,
+    "fileSize": 2960,
     "mimeType": "application/json"
   },
   "proof": {
     "type": "EcdsaSecp256r1Signature2019",
-    "created": "2026-01-29T20:45:33.856421Z",
+    "created": "2026-01-30T15:47:28.324809Z",
     "verificationMethod": "did:web:jacqueslatour.ca#key-1",
     "proofPurpose": "assertionMethod",
-    "proofValue": "MEQCIBIaj7cTht9ZRkCt1ULl7ciPdmepfZVIvqZOKmcw51nFAiAkKq8uGNrrTNBk3RONY8zIEbHTSQWfDYT/InePYo+3Yg=="
+    "proofValue": "MEUCIQD+6ktLCmlhsqcj0q/nyKImKRvluofOtYUw8jh9ZzzvWAIgCH3Ol2Wxr6ZVfRe/ALFxyxQyBTfauFCozwLT6kJiMFg="
   },
   "manifestProof": {
     "type": "EcdsaSecp256r1Signature2019",
-    "created": "2026-01-29T20:45:33.856421Z",
+    "created": "2026-01-30T15:47:28.324809Z",
     "verificationMethod": "did:web:jacqueslatour.ca#key-1",
     "proofPurpose": "authentication",
-    "proofValue": "MEUCIQCxWCJOOCIWy1ytwY0jkdKHnoHbxDixmJTGjg7DOPOzqAIgO8UnZvpgWBgWTick+HTmlCtmFHm3Nn6XYtr10MV+lFU="
+    "proofValue": "MEUCIQDr9dIXMTXWobae7OsYS+2jzMTFfjsuPq9YOoFGoEoGjgIgBIQdYoz4gvaN6hPv/IihkQ7Y9t0OLn0Xb6ucmrs7nAU="
   }
 }
