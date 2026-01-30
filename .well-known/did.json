@@ -10,13 +10,13 @@
       "id": "did:web:jacqueslatour.ca#active",
       "type": "Ed25519VerificationKey2020",
       "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "zx3dRmSwASCw2dX8LXEt2JAG47rIPoCuGq3um9LunBbs"
+      "publicKeyMultibase": "z3k3dKx-9-Tm6RrjfXbpeHD9aqbLErKoDTVWll2hXLvY"
     },
     {
       "id": "did:web:jacqueslatour.ca#active-encrypt",
       "type": "X25519KeyAgreementKey2020",
       "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "zKJhdqJTaJWwes_L18G1d8PNC393R-dZQfCquWT0GzUw"
+      "publicKeyMultibase": "zZuFiPtMRU9AAidWjcl4s3FV3Rn7Y344IDzLxHrsI7jA"
     }
   ],
   "authentication": [
@@ -35,7 +35,7 @@
     "algorithm": 13,
     "digestType": 4,
     "digest": "F8A047A4140AE2B47272DDE1A40C87ED0ABBEAF8AC24A5AE7039B1DDB03370C8A043684AE72B9B5DB2FFC1CDB3DAEE1A",
-    "created": "2026-01-30T11:29:33-05:00",
+    "created": "2026-01-30T13:52:18-05:00",
     "note": "Self-sovereign DNSSEC trust anchor - no ICANN dependency"
   },
   "service": [
