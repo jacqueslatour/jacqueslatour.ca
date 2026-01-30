@@ -7,67 +7,26 @@
   "id": "did:web:jacqueslatour.ca",
   "verificationMethod": [
     {
-      "id": "did:web:jacqueslatour.ca#0e258ac0",
+      "id": "did:web:jacqueslatour.ca#active",
       "type": "Ed25519VerificationKey2020",
       "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "zkwL1poWpO7ucwln7k6TyUAvtK2tFTQfCqwurbXK68ck"
+      "publicKeyMultibase": "zx3dRmSwASCw2dX8LXEt2JAG47rIPoCuGq3um9LunBbs"
     },
     {
-      "id": "did:web:jacqueslatour.ca#9a42abe3",
-      "type": "Ed25519VerificationKey2020",
-      "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "zDRQY3aPu2lmmRqq5ijjqe-NeGJGaureUwMZKsIDTWsg"
-    },
-    {
-      "id": "did:web:jacqueslatour.ca#748ce048",
-      "type": "Ed25519VerificationKey2020",
-      "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "znkTHMD-euNEaoeW08qsasD16l3G_vRrLSePU3JlCzDo"
-    },
-    {
-      "id": "did:web:jacqueslatour.ca#811118c1",
+      "id": "did:web:jacqueslatour.ca#active-encrypt",
       "type": "X25519KeyAgreementKey2020",
       "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "zwMEfKfKJCxBT0lJcWVK5HcRs3d6lzZ7Bo4F4MGvoRjI"
-    },
-    {
-      "id": "did:web:jacqueslatour.ca#374fd47a",
-      "type": "X25519KeyAgreementKey2020",
-      "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "zpC-HKNbsLhobmW8FzZs6m9z-xY6OY_92cYfl4UoBNHw"
-    },
-    {
-      "id": "did:web:jacqueslatour.ca#d9941bf6",
-      "type": "X25519KeyAgreementKey2020",
-      "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "zLThafopsFKe-ZaZ9f7InOz3ywpCqTNXR8WQh6pEOHjU"
-    },
-    {
-      "id": "did:web:jacqueslatour.ca#key-1",
-      "type": "JsonWebKey2020",
-      "controller": "did:web:jacqueslatour.ca",
-      "publicKeyJwk": {
-        "kty": "EC",
-        "x": "f0AUpL5ZdWzCNsf1mh_RttePskTIyBW5gubYVALjHRY",
-        "y": "ITNHs6MULrwffF_01iygvIP489bpE8wTV-XCXMSTUwI",
-        "crv": "P-256"
-      }
+      "publicKeyMultibase": "zKJhdqJTaJWwes_L18G1d8PNC393R-dZQfCquWT0GzUw"
     }
   ],
   "authentication": [
-    "did:web:jacqueslatour.ca#0e258ac0",
-    "did:web:jacqueslatour.ca#9a42abe3",
-    "did:web:jacqueslatour.ca#748ce048"
+    "did:web:jacqueslatour.ca#active"
   ],
   "assertionMethod": [
-    "did:web:jacqueslatour.ca#0e258ac0",
-    "did:web:jacqueslatour.ca#9a42abe3",
-    "did:web:jacqueslatour.ca#748ce048"
+    "did:web:jacqueslatour.ca#active"
   ],
   "keyAgreement": [
-    "did:web:jacqueslatour.ca#811118c1",
-    "did:web:jacqueslatour.ca#374fd47a",
-    "did:web:jacqueslatour.ca#d9941bf6"
+    "did:web:jacqueslatour.ca#active-encrypt"
   ],
   "dnsSecAnchor": {
     "type": "DNSSECTrustAnchor",
@@ -76,7 +35,7 @@
     "algorithm": 13,
     "digestType": 4,
     "digest": "F8A047A4140AE2B47272DDE1A40C87ED0ABBEAF8AC24A5AE7039B1DDB03370C8A043684AE72B9B5DB2FFC1CDB3DAEE1A",
-    "created": "2026-01-30T10:42:11-05:00",
+    "created": "2026-01-30T11:29:33-05:00",
     "note": "Self-sovereign DNSSEC trust anchor - no ICANN dependency"
   },
   "service": [
