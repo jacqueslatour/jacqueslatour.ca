@@ -10,13 +10,13 @@
       "id": "did:web:jacqueslatour.ca#active",
       "type": "Ed25519VerificationKey2020",
       "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "z3k3dKx-9-Tm6RrjfXbpeHD9aqbLErKoDTVWll2hXLvY"
+      "publicKeyMultibase": "zzcRcpny4RmN63CCSYBGPsDdpQE6ruHa5tnIFGahFclo"
     },
     {
       "id": "did:web:jacqueslatour.ca#active-encrypt",
       "type": "X25519KeyAgreementKey2020",
       "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "zZuFiPtMRU9AAidWjcl4s3FV3Rn7Y344IDzLxHrsI7jA"
+      "publicKeyMultibase": "zvdU1D6cY2ssDZcuX6YYboBW_UJB8HW-pgvt3zOplekc"
     }
   ],
   "authentication": [
@@ -28,21 +28,11 @@
   "keyAgreement": [
     "did:web:jacqueslatour.ca#active-encrypt"
   ],
-  "dnsSecAnchor": {
-    "type": "DNSSECTrustAnchor",
-    "domain": "jacqueslatour.ca",
-    "keyTag": 16091,
-    "algorithm": 13,
-    "digestType": 4,
-    "digest": "F8A047A4140AE2B47272DDE1A40C87ED0ABBEAF8AC24A5AE7039B1DDB03370C8A043684AE72B9B5DB2FFC1CDB3DAEE1A",
-    "created": "2026-01-30T13:52:18-05:00",
-    "note": "Self-sovereign DNSSEC trust anchor - no ICANN dependency"
-  },
   "service": [
     {
-      "id": "did:web:jacqueslatour.ca#trust-registry",
+      "id": "did:web:jacqueslatour.ca#trustregistry",
       "type": "TrustRegistry",
-      "serviceEndpoint": "did:web:suppliers.trustregistry.nborbit.ca"
+      "serviceEndpoint": "https://a.a"
     }
   ]
 }
