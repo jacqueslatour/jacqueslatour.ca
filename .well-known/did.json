@@ -10,13 +10,13 @@
       "id": "did:web:jacqueslatour.ca#active",
       "type": "Ed25519VerificationKey2020",
       "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "zzcRcpny4RmN63CCSYBGPsDdpQE6ruHa5tnIFGahFclo"
+      "publicKeyMultibase": "zMjAKw-Kv8J-jBPXrX8i5gin7Pse2tKMvq1GX_kZJ3nY"
     },
     {
       "id": "did:web:jacqueslatour.ca#active-encrypt",
       "type": "X25519KeyAgreementKey2020",
       "controller": "did:web:jacqueslatour.ca",
-      "publicKeyMultibase": "zvdU1D6cY2ssDZcuX6YYboBW_UJB8HW-pgvt3zOplekc"
+      "publicKeyMultibase": "zYnFUohs-1WWdhoGTjKznrIST2MT3EgBZaWQminkvPC0"
     }
   ],
   "authentication": [
@@ -32,7 +32,7 @@
     {
       "id": "did:web:jacqueslatour.ca#trustregistry",
       "type": "TrustRegistry",
-      "serviceEndpoint": "https://a.a"
+      "serviceEndpoint": "https://https://suppliers.trustregistry.nborbit.ca"
     }
   ]
 }
