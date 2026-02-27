@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "type": "VerifiableDocumentSignature",
+  "did": "did:web:jacqueslatour.ca",
+  "payload": {
+    "did": "did:web:jacqueslatour.ca",
+    "documentHash": "9a19f4117a91c5e81b9aea0aebe9f4d0dbbb5d4cc6850412ab86cdcd50b84538",
+    "hashAlgorithm": "SHA-256",
+    "timestamp": "2026-02-27T22:22:27.411461Z",
+    "fileName": "did.json",
+    "fileSize": 1270,
+    "mimeType": "application/json",
+    "reason": "https://jacqueslatour.ca/.well-known/did.json",
+    "location": "trustdid_setup v2.2.0"
+  },
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "created": "2026-02-27T22:22:27.411461Z",
+    "verificationMethod": "did:web:jacqueslatour.ca#active",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "tuNgRv/5UNpAQk8hW/E62p9vg752UneoR9tjFL44KEzsHnDgVoNGgGd6eVzuuFjHkdg7MJ4YJDQvJqhQ1/RKAA=="
+  },
+  "manifestProof": {
+    "type": "Ed25519Signature2020",
+    "created": "2026-02-27T22:22:27.411461Z",
+    "verificationMethod": "did:web:jacqueslatour.ca#active",
+    "proofPurpose": "authentication",
+    "proofValue": "eHGrIJBlBr2U+vJIMZKzARUe8Qa8Mxd0IKQUyIhxKveD43ejttxOZfYdBuNnCi6Zs8sDke2rZ1tHtFApeUdIDQ=="
+  }
+}
