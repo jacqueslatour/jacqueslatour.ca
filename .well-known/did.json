@@ -17,16 +17,31 @@
       "type": "X25519KeyAgreementKey2020",
       "controller": "did:web:jacqueslatour.ca",
       "publicKeyMultibase": "zVOs9sVTCXY7uNQ8xw9u1f3Z9v4Fvf9FDZ-L1_od0YAI"
+    },
+    {
+      "id": "did:web:jacqueslatour.ca#finance",
+      "type": "Ed25519VerificationKey2020",
+      "controller": "did:web:jacqueslatour.ca",
+      "publicKeyMultibase": "z3W60INr-WZ4CI8otakni0uf69gKfFyFQLgJ1CnXkzGQ"
+    },
+    {
+      "id": "did:web:jacqueslatour.ca#finance-encrypt",
+      "type": "X25519KeyAgreementKey2020",
+      "controller": "did:web:jacqueslatour.ca",
+      "publicKeyMultibase": "zWIr7eA2vAR-PRaVbRciQAXCH67rzQh0OjQpjWM765GE"
     }
   ],
   "authentication": [
-    "did:web:jacqueslatour.ca#active"
+    "did:web:jacqueslatour.ca#active",
+    "did:web:jacqueslatour.ca#finance"
   ],
   "assertionMethod": [
-    "did:web:jacqueslatour.ca#active"
+    "did:web:jacqueslatour.ca#active",
+    "did:web:jacqueslatour.ca#finance"
   ],
   "keyAgreement": [
-    "did:web:jacqueslatour.ca#active-encrypt"
+    "did:web:jacqueslatour.ca#active-encrypt",
+    "did:web:jacqueslatour.ca#finance-encrypt"
   ],
   "service": [
     {
