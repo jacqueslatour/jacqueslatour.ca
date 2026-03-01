@@ -49,5 +49,11 @@
       "type": "TrustRegistry",
       "serviceEndpoint": "did:web:suppliers.trustregistry.nborbit.ca"
     }
-  ]
+  ],
+  "dnsSecAnchor": {
+    "keyTag": 16091,
+    "algorithm": 13,
+    "digestType": 2,
+    "digest": "7E412CE1C67BCACFBCAAA073211A35E0747D2381CD69C9CE9381030E585D686C"
+  }
 }
