@@ -48,6 +48,7 @@
       "id": "did:web:jacqueslatour.ca#trustregistry",
       "type": "TrustRegistry",
       "serviceEndpoint": "did:web:suppliers.trustregistry.nborbit.ca"
+      "apiUrl": "https://suppliersapi.trustregistry.nborbit.ca"
     }
   ],
   "dnsSecAnchor": {
