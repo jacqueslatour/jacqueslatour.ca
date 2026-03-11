@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/ed25519-2020/v1",
+    "https://w3id.org/security/suites/x25519-2020/v1",
+    "https://w3id.org/security/suites/multikey-2021/v1"
+  ],
+  "id": "did:web:trustdid.ca:public:81de0a5d",
+  "verificationMethod": [
+    {
+      "id": "did:web:trustdid.ca:public:81de0a5d#active",
+      "type": "Ed25519VerificationKey2020",
+      "controller": "did:web:trustdid.ca",
+      "publicKeyMultibase": "zX4gQ4z_PCfHzL93PYBb2U1BG7ht8COoFGPtxw80xKiQ",
+      "created": "2026-03-11T00:56:18.465542Z"
+    },
+    {
+      "id": "did:web:trustdid.ca:public:81de0a5d#active-pq",
+      "type": "Multikey",
+      "controller": "did:web:trustdid.ca",
+      "publicKeyMultibase": "uhyThnjaULHVyVl_iW7sYqW5AU9SYIWfCo5XPKLe0zWwxKdf5CgVY_vgGAm-ALwwyglpTf_3fQ734nZ3FnmmRgjHbG1W1s2QQ6oSW1R9TY0yyOofqPaXolfC4B6HWeIz6XWG3kWkAyyVZO7ogG__GOKl6OTinmBrhg2T-CucmeUg9evuXnTd6tZRQOanoc_i-0qWwbDArtNpri_-hs750YpNd9dqIj0dKftRzFdjYh39Q3L_BqV13RnzpleBkKkR8dgnsTTKNdQTJwlxRjBz0beAZflP_m6QWGLa0ebmkb4JGoARv7cgWIafWJHmedfYm9DslX5BsglfCNeo2Td5nVrRlwMcfD-5MpLjCvoPEuvTeinoDBl93K61jS2_50RnbqPtVaom0A54qHzpspYauWOhvGn9kM6-dplIEE01oT_xRyfq1H_POwAoAs5PFC4SzzZG1OH6G_Tu0gXeLrxgvMeknoi7qi3cyKFkmL9zFolFwBPp1zld2ueSg79pfi4ZG3o5w2jcPmyM9p0_buAPVn3Hsq-GSJrms5KYRsrNW3sIlsgTTPUZqKqinjT9G8mJWBVjxDMQtnFrkyqC096EyYfWD8Y-DtBHbFAkBXqDIFJWMGoS0MfQx3Xt4b2G0PI17rLP8O0vLTa-0e1Yb8EHYk3df_nvPASZrALAjK7tunTJL0btDjhUDscFUZ4lVOr52KagHbTmBThYdAbCBuoYSk2uT3yd0QjK8KaRMK9kayK0g6i7tCg4bpmDORFpc9OSmaosT7Ht5VYFy6Ye-h3wdmGZsvzenKGCh1eogQzDbkRBHA_xX0ySniLxm5wTRAK-Pa130VT2nW9A09pUkh8gTGuVqsrQlUOsCsR_Hyi9EsiVvutVYNXueAOf1koHxvT-_6eWZRUQROuQnitWswQhOsFnQ2x8vz5zgoLCuD4w6OJW1_CDcyi58m-3Ga3epnEG7Cr5URU89-gRbFADKCxMTErqCwBB-kjgOyoMGtE83UFChTtBhJvlsKwYYhPwu7Nxdsj-KISGMQPmhaoic_EuGuiHRKk4HwEGNMS2FJ-CTiih5ysqMZ0A7HPo05e7vL8Za8wOqCLC0DNZuNrhGh1-NNEXM2n-2j7Plj99AZMvn99WhcMcKIO-oZOMav_YLq5FgrYWJWfESDWYh2JSwkBSNCTTENAsUdcTCzUzqt07RFH1wA2P_gN8_qfflDgoE0mOc8oZ0hP4zh5uun_S3qvtzvZT2jVN__TzDXy_ehyP8NjvkRzD1Ciekt5hnSQir27oPo4fxj3oQHM8dZG88asvIMRzVIQxAR4RiMpCJFUbdzZrEo0ywEH-wyuFVy1Lm-d0WSyi7485t1nYoZkUZ55qg24yZ6Wx5lw9JcC-KtnD7OUDxOUpSapGUC449ZuBjOHNPmIEKn32jHE8mOU37e1bMGjvbaUbEN1shUVSiZ4ZHHbSp5Zazv5fSp8C2C_Ig1y2P6VwrZFpUXa8NyQB5wv2sFW1bNg5QEorsIlsVlwQI6pEL5Dit0XcsEjrH-HaQpFjKoztbwsKEGIcxdh-2mt8q4kODSWCQVmXQ7Ehx0qn8K0y14dPCbqljwd5ZUPMB5T9om3gTzxFNEum5oDCs_fGmpr8sbFlghE5kL2xY_ZbPkVFBDe8WBGClcEjfBGMZVUc5c9q92Bx5aeTKeHJIt3bSWLa9ab_SsUNoQkHKgZ46461hqAGY7nYhS1JDBnOPOv2iwcgDbwktF7MKvgUR2SgQt_uR",
+      "created": "2026-03-11T00:56:18.465542Z"
+    },
+    {
+      "id": "did:web:trustdid.ca:public:81de0a5d#active-encrypt",
+      "type": "X25519KeyAgreementKey2020",
+      "controller": "did:web:trustdid.ca",
+      "publicKeyMultibase": "zGha3iB3fvkndWZtMdTuqu7ekQ_pv5LEWQSILJ1np4GE",
+      "created": "2026-03-11T00:56:18.465542Z"
+    }
+  ],
+  "authentication": [
+    "did:web:trustdid.ca:public:81de0a5d#active",
+    "did:web:trustdid.ca:public:81de0a5d#active-pq"
+  ],
+  "assertionMethod": [
+    "did:web:trustdid.ca:public:81de0a5d#active",
+    "did:web:trustdid.ca:public:81de0a5d#active-pq"
+  ],
+  "keyAgreement": [
+    "did:web:trustdid.ca:public:81de0a5d#active-encrypt"
+  ]
+}
