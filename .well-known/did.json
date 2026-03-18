@@ -39,5 +39,11 @@
       "publicKeyMultibase": "zz9q68l5G-rvojFt4CEtR6hL2uBVLCg1o4yMHT0-eq2M",
       "type": "X25519KeyAgreementKey2020"
     }
-  ]
+  ],
+  "dnsSecAnchor": {
+    "keyTag": 16091,
+    "algorithm": 13,
+    "digestType": 2,
+    "digest": "7E412CE1C67BCACFBCAAA073211A35E0747D2381CD69C9CE9381030E585D686C"
+  }
 }
