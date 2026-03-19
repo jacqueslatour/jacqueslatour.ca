@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/ed25519-2020/v1",
+    "https://w3id.org/security/suites/x25519-2020/v1",
+    "https://w3id.org/security/suites/multikey-2021/v1"
+  ],
+  "id": "did:web:jacqueslatour.ca:public:jack",
+  "verificationMethod": [
+    {
+      "id": "did:web:jacqueslatour.ca:public:jack#active",
+      "type": "Ed25519VerificationKey2020",
+      "controller": "did:web:jacqueslatour.ca",
+      "publicKeyMultibase": "zNDEjmKZMiG6UfxGLrIfAaAKT7Pz9m1UMkfi0Kg0Y6As",
+      "created": "2026-03-19T02:53:25.302329Z"
+    },
+    {
+      "id": "did:web:jacqueslatour.ca:public:jack#active-pq",
+      "type": "Multikey",
+      "controller": "did:web:jacqueslatour.ca",
+      "publicKeyMultibase": "uhyTCKxIocEEf6Wo6Jpl4fgwlW4einwklU9ve4yYZV-SyTKJPt1yqxaZCVEyvidwNwR8scbqcbPXQ9ffP0f6rs1vL5Bi3-nffkHEAj3SZ9nNT-G8nfbFAZWL-7Y61Q1uLt2_JqOcGoVn5NGcuKzyugD90lESZzKBJkhJgYeqtAmvCClrIRQ_GpSqXqa76m2iNjxBfjywZheCHJEiWwkHA_lseWg0s9RdAbRY4P6oL-bkHJFFjI2TEdY3tNWSq6Cm2AmGwcTKtc87vkyz-3MAKakBsqWrsncbNwj6iBtwKX0PSBDPzuW0idzTG5uWWtekayBldx2ZLPLc8Pn5FzlUBNnot5nktbae-tApuswI1bFp6BVUOHHYSOQajMnWyfq1bBHPfl6rvwxvpMijzoQQTC1rYRDwjo4engQTtlPDDPFY3xiI3LrDUnHayDiHCjme7_MRSDKRX1qAMdb0HE82sLJNn1cb1BhL1OWKlEUEhdkAiAFhSQyh3wKn9rzROw76_a7oeDX5ysPxUW42jcqTFzHfoT7NVW2qfQUSejTtXK-RMlLgIBDozo5jhMQymaCn-PcA9_L0Gh-SlqTTiZqk17PXn3wpIEZZnxzuHd06Ww77YKWXvZGi4kI0y8IK-t3B7MsQi2bcMPlyS6F4denycd9m2Y5CZqGa6rQvgBUh9umKinqbBqVLwoL4Ek5xjviT1GULoPDVIr3Dzq9hEBxQCVqx9N_LhO-4TQmJjN9Bzy_7pEldzahnF2ufmRr1ZP-4o_obH0QGQnKlb8C10MHPFYe9FHmAUY7AA9opc9cwLrHp4FCyRxbFeADsJuXErgRPZCOVU5Noek7oRpm5IS1LXGWUTJ2pwvv8t4XHaJjVUzEudSX9iMkU6UdI6CWkLmMu32pmev-J74yAkmOchvlHYxFI2xuHadgwSKV9NwZPO0C2PrCIniz04YJz3cYOy8hHohP5sulXBVIgBR4ryhGg75wWfC6K83w_lw6yIdCzCzDGpfh-ICCZ2PORrLEE_G-Vd3o4ssWj1O8qg2bdM5gg_FAN7SQK83peaLlZ7XW019i5JRLzFia-UwhkVURjhBA-oG94IhUxb19-Evaa07k3dsdWnhiUBBB-OnRht4jW45lXFuETvXcBDMkLCrv-IEcfSWkIWxeOZ3kVtiG3xg0aeRJNKcTEelfHNa-kOuVPb25znAe0aEmUb-QUveDFu3RqW63SFlVo4RVewAuVhfUAOVvLgIDInfAJdkTXPLmNBSOspLd7laKm3cDEYSMZopVabxqnPbCA8dmsBeuc1ONDys1tGS2ExqP8M82b4VyPZrlS2kcNF61f65_XLaNvenr2vO3vxGznWeih5meC6uTvqn-zXJ4_ZDpO9famDtkgOL7Jdm1LDfs76ZPTnlU-rNnYXOHhOO5QJFX4NUDYbJgj4qFc3PyfbIIAZribwJjOUut7oHAc6EgvDjcLSr10NzvbNpSQygigDA74e-Sy7i45ILzYZEA3dftuGr8k44UyMvVNr-qXeWAwtPozc1mFdovFHx8b259rShaygpwZlCm9BXkw96QkJzlSrhVGGUhCXqkKJCZ5EIFRxTqILu7Q3RFsHtlBsp5JSwfTjNm8dlaor_sBwA240K7hChZ8s7X6bShAQ75NSls9eOUigsnpDnYWOxpDhxhOE1AOalpPcq3VyzrBmKG8bsw3K9ke8NWw0RiY6AUzRaPQPIH_Z8M58Pbus2LNFzc-zZjtWpLg-Q8LPe0dW",
+      "created": "2026-03-19T02:53:25.302329Z"
+    },
+    {
+      "id": "did:web:jacqueslatour.ca:public:jack#active-encrypt",
+      "type": "X25519KeyAgreementKey2020",
+      "controller": "did:web:jacqueslatour.ca",
+      "publicKeyMultibase": "zbuKehxsHdd9j-_3BsF-1UEk61hz9dL16OVSOKj8Kkz4",
+      "created": "2026-03-19T02:53:25.302329Z"
+    }
+  ],
+  "authentication": [
+    "did:web:jacqueslatour.ca:public:jack#active",
+    "did:web:jacqueslatour.ca:public:jack#active-pq"
+  ],
+  "assertionMethod": [
+    "did:web:jacqueslatour.ca:public:jack#active",
+    "did:web:jacqueslatour.ca:public:jack#active-pq"
+  ],
+  "keyAgreement": [
+    "did:web:jacqueslatour.ca:public:jack#active-encrypt"
+  ]
+}
