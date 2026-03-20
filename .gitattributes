@@ -1,0 +1,4 @@
+# Prevent Git from converting line endings on DID documents
+# These files are signed — any byte change breaks the hash
+*.json binary
+*.vrfy binary
