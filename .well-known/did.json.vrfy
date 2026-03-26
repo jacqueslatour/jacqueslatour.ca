@@ -1,0 +1,50 @@
+// =========================================================================
+//  TrustDID(TM) -- Digital Document Verification Manifest
+//  Copyright (c) 2026 TrustDID Solutions Inc. All rights reserved.
+//  PATENT PENDING
+// =========================================================================
+//
+//  This .vrfy file is a cryptographic proof of authenticity and integrity
+//  for the accompanying document.
+//
+//  To verify this document, download the TrustDID verification toolkit:
+//
+//      https://trustdid.ca
+//
+//  TrustDID builds cryptographic document authentication and verification
+//  systems that combine Decentralized Identifiers (DIDs), DNS assurance,
+//  and trust registry authorization. Our patent-pending architecture
+//  provides progressive assurance levels -- from cryptographic verification
+//  to multi-channel validation -- enabling organizations to establish
+//  verifiable digital trust without centralized certificate authorities.
+//
+//  Learn more at https://trustdid.ca
+// =========================================================================
+{
+  "version": "2.0",
+  "type": "VerifiableDocumentSignature",
+  "did": "did:web:jacqueslatour.ca",
+  "payload": {
+    "did": "did:web:jacqueslatour.ca",
+    "documentHash": "0e89b7e1c26603443f44f31f181c57e6405924d21ceec8ca8277d9414c048662",
+    "hashAlgorithm": "SHA-256",
+    "timestamp": "2026-03-26T20:43:32.094415Z",
+    "fileName": "did.json",
+    "fileSize": 3084,
+    "mimeType": "application/json"
+  },
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "created": "2026-03-26T20:43:32.094415Z",
+    "verificationMethod": "did:web:jacqueslatour.ca#active",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "ZWJCJEr/JMFHaaRqtMHEzFQjuCjtjCv1jHjzpHqaNwymzo9lUHmh9sxBs/8N6v/9EDGRNacbIaVuGYAm+SavCg=="
+  },
+  "manifestProof": {
+    "type": "Ed25519Signature2020",
+    "created": "2026-03-26T20:43:32.094415Z",
+    "verificationMethod": "did:web:jacqueslatour.ca#active",
+    "proofPurpose": "authentication",
+    "proofValue": "JhdAcuFxrE68hl6ehr8HgZ02QHvd3of1bb/hRGZa0OrlAMl5LlvYQm4yQ5aon5rAh1aTlYFbslQxMgpsVvisAQ=="
+  }
+}
