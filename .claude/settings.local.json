@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -sI https://jacqueslatour.ca/index.html.vrfy)",
+      "Bash(curl -sI https://trustdid.ca/index.html.vrfy)",
+      "Bash(curl -sI https://trustdid.ca/verify.js.vrfy)"
+    ]
+  }
+}

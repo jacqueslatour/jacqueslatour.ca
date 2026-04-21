@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Board Resolution — Verified Web Showcase</title>
+  <meta name="description" content="Sample signed board resolution demonstrating cryptographic document verification with TrustDID.">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="grid-bg"></div>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="container">
+      <span class="label">did:web:jacqueslatour.ca</span>
+      <span class="separator">|</span>
+      <span>MAXIMUM ASSURANCE</span>
+      <span class="separator">|</span>
+      <span>DNSSEC + Trust Registry</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <a href="../" class="nav-logo">
+        <span class="logo-icon">V</span>
+        Verified Web
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="./" class="active">Documents</a></li>
+        <li><a href="../how-it-works/">How It Works</a></li>
+        <li><a href="../about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="./">Documents</a>
+      <span class="sep">/</span>
+      <span>Board Resolution</span>
+    </div>
+  </div>
+
+  <!-- Document -->
+  <section class="doc-page-wrapper">
+    <div class="doc-page">
+      <div class="doc-page-header">
+        <div class="resolution-header">
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:#64748b;margin-bottom:1rem">Clearwater Advisory Group Inc.</div>
+          <h1>Resolution of the Board of Directors</h1>
+          <h2>Authorization of Digital Trust Framework</h2>
+        </div>
+      </div>
+      <div class="doc-page-content">
+        <div class="resolution-meta">
+          <span><strong>Resolution No.:</strong> 2026-003</span>
+          <span><strong>Date:</strong> February 12, 2026</span>
+        </div>
+
+        <p style="font-style:italic;color:#64748b;margin-bottom:2rem">
+          At a duly convened meeting of the Board of Directors of Clearwater Advisory Group Inc.
+          (the "Corporation"), held on February 12, 2026, at the registered office of the Corporation,
+          a quorum being present and acting throughout, the following resolutions were adopted:
+        </p>
+
+        <div class="whereas">
+          <strong>WHEREAS</strong> the Corporation provides compliance advisory and risk management
+          services to regulated industries that require verifiable document integrity;
+        </div>
+
+        <div class="whereas">
+          <strong>WHEREAS</strong> the Corporation has identified the need for a cryptographic
+          document signing framework that provides independently verifiable proof of document
+          authenticity, integrity, and provenance;
+        </div>
+
+        <div class="whereas">
+          <strong>WHEREAS</strong> decentralized identifiers (DIDs) as specified by the W3C
+          provide a standards-based mechanism for establishing verifiable digital identity
+          without dependency on centralized certificate authorities;
+        </div>
+
+        <div class="whereas">
+          <strong>WHEREAS</strong> the emergence of quantum computing necessitates the adoption
+          of post-quantum cryptographic algorithms alongside classical signature schemes to
+          ensure long-term document integrity;
+        </div>
+
+        <div class="whereas">
+          <strong>WHEREAS</strong> the Board has reviewed and considered the technical assessment
+          prepared by the Chief Technology Officer dated January 28, 2026;
+        </div>
+
+        <p style="margin-top:2rem;margin-bottom:1rem"><strong>NOW, THEREFORE, BE IT:</strong></p>
+
+        <div class="resolved">
+          <strong>RESOLVED</strong>, that the Corporation hereby authorizes the adoption and
+          implementation of a Digital Trust Framework based on the <span style="font-family:var(--font-mono);font-size:0.9em">did:web</span>
+          decentralized identifier method, utilizing Ed25519 digital signatures for document
+          signing and X25519 key agreement for document encryption;
+        </div>
+
+        <div class="resolved">
+          <strong>RESOLVED FURTHER</strong>, that all official corporate documents, including but
+          not limited to press releases, compliance certificates, policy documents, financial
+          reports, and board resolutions, shall be digitally signed using the Corporation's
+          registered DID and published with accompanying verification manifests;
+        </div>
+
+        <div class="resolved">
+          <strong>RESOLVED FURTHER</strong>, that the Corporation shall maintain post-quantum
+          cryptographic signatures (ML-DSA-44) on all signed documents in addition to classical
+          Ed25519 signatures, ensuring document integrity against future quantum computing threats;
+        </div>
+
+        <div class="resolved">
+          <strong>RESOLVED FURTHER</strong>, that the Chief Technology Officer is hereby authorized
+          to establish DNSSEC trust anchors and register the Corporation with an appropriate
+          Trust Registry to achieve Maximum Assurance status for the Corporation's digital identity;
+        </div>
+
+        <div class="resolved">
+          <strong>RESOLVED FURTHER</strong>, that the officers of the Corporation are hereby
+          authorized to execute any and all documents and take any and all actions as may be
+          necessary or desirable to carry out the purposes and intent of the foregoing resolutions.
+        </div>
+
+        <!-- Signatures -->
+        <div class="signature-block">
+          <div class="sig-entry">
+            <div class="sig-name">M. Thornton</div>
+            <div class="sig-role">Margaret Thornton<br>Corporate Secretary</div>
+          </div>
+          <div class="sig-entry">
+            <div class="sig-name">J. Nakamura</div>
+            <div class="sig-role">James Nakamura<br>Chair of the Board</div>
+          </div>
+        </div>
+
+        <p style="margin-top:2rem;font-size:0.8rem;color:#94a3b8;text-align:center;font-style:italic">
+          I hereby certify that this is a true and correct copy of the resolution adopted
+          by the Board of Directors of Clearwater Advisory Group Inc.
+        </p>
+      </div>
+    </div>
+
+    <!-- Verification Panel -->
+    <div class="verify-panel" style="margin-bottom:3rem">
+      <div class="verify-panel-header">
+        &#x1f512; Verification Details
+      </div>
+      <div class="verify-panel-grid">
+        <div class="verify-panel-item">
+          <span class="label">Signed By</span>
+          <span class="value">did:web:jacqueslatour.ca#active</span>
+        </div>
+        <div class="verify-panel-item">
+          <span class="label">Hash Algorithm</span>
+          <span class="value">SHA-256</span>
+        </div>
+        <div class="verify-panel-item">
+          <span class="label">Signature</span>
+          <span class="value">Ed25519 + ML-DSA-44</span>
+        </div>
+        <div class="verify-panel-item">
+          <span class="label">Assurance</span>
+          <span class="value text-green">MAXIMUM (DNSSEC + Trust Registry)</span>
+        </div>
+      </div>
+      <a href="board-resolution.html.vrfy" class="vrfy-link">View .vrfy manifest &#x2192;</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="./">Documents</a>
+        <a href="../how-it-works/">How It Works</a>
+        <a href="../about/">About TrustDID</a>
+        <a href="https://trustdid.ca" target="_blank" rel="noopener">trustdid.ca</a>
+      </div>
+      <p>A living demonstration of the verified web, powered by TrustDID</p>
+      <div class="footer-did">did:web:jacqueslatour.ca</div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

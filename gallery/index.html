@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Gallery — Verified Web Showcase</title>
+  <meta name="description" content="Browse sample signed documents — press releases, certificates, board resolutions, and policies — each cryptographically signed and verifiable.">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="grid-bg"></div>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="container">
+      <span class="label">did:web:jacqueslatour.ca</span>
+      <span class="separator">|</span>
+      <span>MAXIMUM ASSURANCE</span>
+      <span class="separator">|</span>
+      <span>DNSSEC + Trust Registry</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <a href="../" class="nav-logo">
+        <span class="logo-icon">V</span>
+        Verified Web
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="./" class="active">Documents</a></li>
+        <li><a href="../how-it-works/">How It Works</a></li>
+        <li><a href="../about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Signed Document Gallery</h1>
+      <p>Browse sample documents — each one is cryptographically signed by <span class="mono text-green">did:web:jacqueslatour.ca</span> and independently verifiable.</p>
+    </div>
+  </section>
+
+  <!-- Document Cards -->
+  <section class="container" style="padding:2rem 1.5rem 4rem">
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))">
+
+      <!-- Press Release -->
+      <a href="press-release.html" class="doc-card">
+        <div class="doc-card-preview">
+          <div class="doc-icon">&#x1f4f0;</div>
+          <div class="doc-type">Press Release</div>
+        </div>
+        <div class="doc-card-body">
+          <h3>Strategic Partnership Announcement</h3>
+          <p>Clearwater Advisory Group announces a strategic partnership with Nordic Trust Alliance to expand digital trust services.</p>
+          <div class="doc-card-footer">
+            <span class="signed-badge">&#x2713; Signed</span>
+            <span class="doc-date">March 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Certificate -->
+      <a href="certificate.html" class="doc-card">
+        <div class="doc-card-preview">
+          <div class="doc-icon">&#x1f3c6;</div>
+          <div class="doc-type">Certificate</div>
+        </div>
+        <div class="doc-card-body">
+          <h3>ISO 27001:2022 Certification</h3>
+          <p>Information Security Management System certification issued by Global Standards Authority.</p>
+          <div class="doc-card-footer">
+            <span class="signed-badge">&#x2713; Signed</span>
+            <span class="doc-date">January 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Board Resolution -->
+      <a href="board-resolution.html" class="doc-card">
+        <div class="doc-card-preview">
+          <div class="doc-icon">&#x1f3db;</div>
+          <div class="doc-type">Legal Document</div>
+        </div>
+        <div class="doc-card-body">
+          <h3>Board Resolution — Digital Trust Framework</h3>
+          <p>Resolution of the Board of Directors authorizing the adoption of a cryptographic document integrity framework.</p>
+          <div class="doc-card-footer">
+            <span class="signed-badge">&#x2713; Signed</span>
+            <span class="doc-date">February 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Policy -->
+      <a href="policy.html" class="doc-card">
+        <div class="doc-card-preview">
+          <div class="doc-icon">&#x1f4cb;</div>
+          <div class="doc-type">Corporate Policy</div>
+        </div>
+        <div class="doc-card-body">
+          <h3>Information Security Policy v3.2</h3>
+          <p>Enterprise information security policy covering access control, incident response, and data protection standards.</p>
+          <div class="doc-card-footer">
+            <span class="signed-badge">&#x2713; Signed</span>
+            <span class="doc-date">March 2026</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Info Banner -->
+  <section class="container mb-3">
+    <div class="cta-banner">
+      <h2>Every Document Has a .vrfy Manifest</h2>
+      <p>Each file on this site is accompanied by a <span class="mono">.vrfy</span> manifest containing SHA-256 hashes, Ed25519 signatures, and ML-DSA-44 post-quantum proofs. The browser extension checks these automatically.</p>
+      <a href="../how-it-works/" class="btn btn-outline">Learn how verification works &#x2192;</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="./">Documents</a>
+        <a href="../how-it-works/">How It Works</a>
+        <a href="../about/">About TrustDID</a>
+        <a href="https://trustdid.ca" target="_blank" rel="noopener">trustdid.ca</a>
+      </div>
+      <p>A living demonstration of the verified web, powered by TrustDID</p>
+      <div class="footer-did">did:web:jacqueslatour.ca</div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
