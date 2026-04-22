@@ -161,7 +161,18 @@
     if (!url) return '';
     var trimmed = String(url).trim();
     if (trimmed.slice(-5) === '.vrfy') return trimmed;
-    return trimmed + '.vrfy';
+    // Normalize: drop fragment + query (manifests are per-document, not per-request),
+    // and treat directory URLs as serving index.html so the sidecar URL matches the
+    // file that was actually signed.
+    try {
+      var u = new URL(trimmed, window.location.href);
+      u.hash = '';
+      u.search = '';
+      if (u.pathname === '' || u.pathname.slice(-1) === '/') u.pathname += 'index.html';
+      return u.href + '.vrfy';
+    } catch (e) {
+      return trimmed + '.vrfy';
+    }
   }
 
   function formatTimestamp(iso) {
