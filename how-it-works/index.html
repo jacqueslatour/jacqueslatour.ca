@@ -3,272 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How It Works — Verified Web Showcase</title>
-  <meta name="description" content="Learn how TrustDID verification works — from signing to browser-based verification with progressive trust assurance levels.">
+  <title>How it works — A Signed Web</title>
+  <meta name="description" content="A plain-language walkthrough of how a web page gets cryptographically signed and how anyone can verify it — no blockchain, no platform, just math and DNS.">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-  <div class="grid-bg"></div>
 
-  <!-- Trust Bar -->
   <div class="trust-bar">
     <div class="container">
-      <span class="label">did:web:jacqueslatour.ca</span>
-      <span class="separator">|</span>
-      <span>MAXIMUM ASSURANCE</span>
-      <span class="separator">|</span>
-      <span>DNSSEC + Trust Registry</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>This explainer is itself signed by</span>
+      <code>did:web:jacqueslatour.ca</code>
     </div>
   </div>
 
-  <!-- Navigation -->
-  <nav class="nav">
+  <nav class="nav" aria-label="Primary">
     <div class="container">
-      <a href="../" class="nav-logo">
-        <span class="logo-icon">V</span>
-        Verified Web
-      </a>
+      <a href="/" class="nav-logo"><span class="seal" aria-hidden="true">✓</span> A Signed Web</a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="../">Home</a></li>
-        <li><a href="../gallery/">Documents</a></li>
-        <li><a href="./" class="active">How It Works</a></li>
-        <li><a href="../about/">About</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/demo/valid/">Valid</a></li>
+        <li><a href="/demo/tampered/">Tampered</a></li>
+        <li><a href="/how-it-works/" class="active">How it works</a></li>
+        <li><a href="/about/">About</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <div class="container">
-      <h1>How Verification Works</h1>
-      <p>From signing a document to verifying it in your browser — here is the complete trust chain.</p>
-    </div>
-  </section>
+  <main class="container" style="padding-top:2.5rem; padding-bottom:3rem;">
+    <div class="prose">
 
-  <!-- Step Flow -->
-  <section class="container mt-2">
-    <div class="section-heading">
-      <h2>Four Steps to Trust</h2>
-    </div>
-    <div class="step-flow">
-      <div class="step-item">
-        <div class="step-number">1</div>
-        <h3>Author Creates Content</h3>
-        <p>A document, web page, certificate, or any file is created by its author.</p>
-      </div>
-      <div class="step-item">
-        <div class="step-number">2</div>
-        <h3>Content Is Signed</h3>
-        <p>TrustDID computes a SHA-256 hash and signs it with the author's Ed25519 + ML-DSA-44 keys, creating a <span class="mono">.vrfy</span> manifest.</p>
-      </div>
-      <div class="step-item">
-        <div class="step-number">3</div>
-        <h3>Published Together</h3>
-        <p>The file and its <span class="mono">.vrfy</span> manifest are published side by side. Anyone can access both.</p>
-      </div>
-      <div class="step-item">
-        <div class="step-number">4</div>
-        <h3>Browser Verifies</h3>
-        <p>The browser extension fetches the manifest, re-hashes the content, and verifies the cryptographic signatures against the signer's DID.</p>
-      </div>
-    </div>
-  </section>
+      <div class="section-lede">How it works</div>
+      <h1>Signing a page is easy. Verifying it is easier.</h1>
 
-  <!-- Browser Extension States -->
-  <section class="container mt-3">
-    <div class="section-heading">
-      <h2>What the Browser Extension Shows</h2>
-      <p>The TrustDID extension uses progressive trust — five color states tell you exactly how much you can trust a page.</p>
-    </div>
+      <p>
+        Most of the web asks you to trust a URL. A cryptographic signature
+        gives you something stronger to rely on: a mathematical statement
+        that <em>this exact content</em> was published by <em>that
+        specific identity</em>. This page walks through the whole loop —
+        signing, publishing, verifying — without magic.
+      </p>
 
-    <div class="color-states" style="max-width:700px;margin:0 auto">
-      <div class="color-state">
-        <div class="color-dot orange"></div>
-        <div>
-          <h4>Orange — Unverified</h4>
-          <p>No <span class="mono">.vrfy</span> manifest found for this page. The page is not signed.</p>
-        </div>
-      </div>
-      <div class="color-state">
-        <div class="color-dot yellow"></div>
-        <div>
-          <h4>Yellow — Hash Verified, Different Domain</h4>
-          <p>Content matches its manifest, but the signer's DID is on a different domain than the page. Informational — the document may be legitimately hosted elsewhere.</p>
-        </div>
-      </div>
-      <div class="color-state">
-        <div class="color-dot blue"></div>
-        <div>
-          <h4>Blue — Hash Verified, Same Domain</h4>
-          <p>Content matches its manifest and the signer's domain matches the page domain. Click "Advanced Verify" to fully verify the signature chain.</p>
-        </div>
-      </div>
-      <div class="color-state" style="border-color:var(--accent-green)">
-        <div class="color-dot green"></div>
-        <div>
-          <h4>Green — Fully Verified</h4>
-          <p>All checks passed: hash integrity, signature validity, DID resolution, DNSSEC, and Trust Registry. This is what you should see on every page of this site.</p>
-        </div>
-      </div>
-      <div class="color-state">
-        <div class="color-dot red"></div>
-        <div>
-          <h4>Red — Tampered or Invalid</h4>
-          <p>The content does not match its signed manifest, or the signature verification failed. Do not trust this document.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2>Signing, step by step</h2>
 
-  <!-- Assurance Levels -->
-  <section class="container mt-3">
-    <div class="section-heading">
-      <h2>Three Assurance Levels</h2>
-      <p>Not all verification is equal. TrustDID provides layered assurance depending on the signer's infrastructure.</p>
-    </div>
+      <ol class="steps">
+        <li>
+          <h3>Compute a fingerprint of the page</h3>
+          <p>The file is hashed with SHA-256. Any change, however small —
+             a single letter, a trailing space — produces a completely
+             different hash.</p>
+        </li>
+        <li>
+          <h3>Sign the fingerprint with a private key</h3>
+          <p>The hash is signed with an Ed25519 key the publisher controls.
+             For long-term resilience, a second signature is produced with
+             the post-quantum algorithm ML-DSA-44 from NIST's 2024 suite.</p>
+        </li>
+        <li>
+          <h3>Write a <code>.vrfy</code> sidecar next to the page</h3>
+          <p>The hash, signatures, timestamp, and a pointer to the signer's
+             public identity go into a small JSON file named
+             <code>&lt;filename&gt;.vrfy</code>. The sidecar is deployed
+             alongside the page.</p>
+        </li>
+        <li>
+          <h3>Publish the public key at a DID document</h3>
+          <p>The signer's public key lives at a known URL like
+             <code>jacqueslatour.ca/.well-known/did.json</code>. This is a
+             public decentralized identifier (<code>did:web</code>) — no
+             ledger, no blockchain, no third-party account.</p>
+        </li>
+      </ol>
 
-    <div class="assurance-grid">
-      <div class="assurance-card">
-        <div class="level-name standard">Standard</div>
-        <h3>DID Document Only</h3>
-        <ul>
-          <li>Document hash integrity</li>
-          <li>Ed25519 signature valid</li>
-          <li>DID document resolved via HTTPS</li>
-          <li>Signer identity established</li>
-        </ul>
+      <h2>Verifying, step by step</h2>
+
+      <p>
+        A verifier — a browser extension, a command-line tool, or the
+        widget on this site — can reach a yes-or-no answer without any
+        privileged access:
+      </p>
+
+      <ol class="steps">
+        <li>
+          <h3>Fetch the page and its <code>.vrfy</code> sidecar</h3>
+          <p>Both are public. The verifier only needs HTTPS.</p>
+        </li>
+        <li>
+          <h3>Re-compute the hash, compare to the manifest</h3>
+          <p>If one byte of the page has changed since signing, the hashes
+             won't match. The check fails before any cryptography is
+             involved.</p>
+        </li>
+        <li>
+          <h3>Resolve the signer's DID over DNSSEC-protected DNS</h3>
+          <p>The verifier fetches <code>/.well-known/did.json</code> for
+             the claimed domain, anchored to the domain's TLS certificate
+             and DNS records. This is where the signer's public key comes
+             from — not from a central registry.</p>
+        </li>
+        <li>
+          <h3>Check the signature against the public key</h3>
+          <p>If the signature is mathematically valid for the manifest and
+             the key is authorized by the DID document for signing
+             assertions, verification passes.</p>
+        </li>
+      </ol>
+
+      <div class="callout">
+        <strong>What the result actually means:</strong> a "verified" result
+        says the page matches what the holder of this DID signed at that
+        moment in time. It does not say the signer is telling the truth —
+        only that the content has not been modified since they attested to
+        it, and that the identity is the one you expected.
       </div>
 
-      <div class="assurance-card">
-        <div class="level-name high">High</div>
-        <h3>DID + DNSSEC</h3>
-        <ul>
-          <li>Everything in Standard</li>
-          <li>TLSA record verified</li>
-          <li>DNS integrity via DNSSEC anchor</li>
-          <li>Domain ownership proven cryptographically</li>
-        </ul>
+      <h2>Levels of assurance</h2>
+
+      <p>
+        Not every verification is created equal. The verifier returns a
+        single cryptographic yes-or-no <em>and</em> an assurance level
+        summarising how many independent anchors support the signer's
+        identity.
+      </p>
+
+      <ul>
+        <li><strong>Maximum</strong> — cryptography + DNS anchors + trust-registry membership + post-quantum signature.</li>
+        <li><strong>High</strong> — cryptography + DNS URI and TLSA records confirm the signer controls the domain.</li>
+        <li><strong>Medium</strong> — signature is valid, but one identity anchor is missing or the DID is very new.</li>
+        <li><strong>Low</strong> — signature is valid but multiple soft signals are weak; treat with caution.</li>
+      </ul>
+
+      <p>
+        Each level maps to a concrete, auditable set of checks — not a
+        vendor opinion. The full check list is visible on every verify
+        result produced by the widget on this site.
+      </p>
+
+      <h2>What this does <em>not</em> require</h2>
+
+      <ul>
+        <li>A blockchain or distributed ledger.</li>
+        <li>A user account with a third-party platform.</li>
+        <li>A central certificate authority beyond the standard Web PKI already used for HTTPS.</li>
+        <li>Any special browser capability — a plain HTTP client plus DNS is enough to verify.</li>
+      </ul>
+
+      <div class="callout is-warn">
+        <strong>What tampering looks like in practice.</strong>
+        Visit the <a href="/demo/tampered/">tampered press release</a> and
+        click verify. The cryptography catches that the HTML no longer
+        matches its signed hash — the failure has the exact same shape you
+        would see if an attacker silently modified a legitimate document
+        between publisher and reader.
       </div>
 
-      <div class="assurance-card active">
-        <div class="level-name maximum">Maximum</div>
-        <h3>DID + DNSSEC + Trust Registry</h3>
-        <ul>
-          <li>Everything in High</li>
-          <li>Trust Registry authorization checked</li>
-          <li>Signer recognized by trust ecosystem</li>
-          <li>Highest confidence in signer identity</li>
-        </ul>
-        <div class="this-site">&#x2190; This site</div>
-      </div>
     </div>
-  </section>
+  </main>
 
-  <!-- Inside a .vrfy Manifest -->
-  <section class="container mt-3">
-    <div class="section-heading">
-      <h2>Inside a .vrfy Manifest</h2>
-      <p>Every signed file has a companion manifest containing the hash, signer identity, and cryptographic proofs.</p>
-    </div>
-
-    <div class="manifest-preview" style="max-width:700px;margin:0 auto">
-      <pre>{
-  <span class="key">"version"</span>: <span class="string">"3.0"</span>,
-  <span class="key">"type"</span>: <span class="string">"VerifiableDocumentSignature"</span>,
-  <span class="key">"did"</span>: <span class="string">"did:web:jacqueslatour.ca#active"</span>,
-  <span class="key">"payload"</span>: {
-    <span class="key">"documentHash"</span>: <span class="string">"a1b2c3d4e5f6..."</span>,         <span class="comment">// SHA-256 of file</span>
-    <span class="key">"hashAlgorithm"</span>: <span class="string">"SHA-256"</span>,
-    <span class="key">"fileName"</span>: <span class="string">"certificate.html"</span>,
-    <span class="key">"timestamp"</span>: <span class="string">"2026-03-08T14:30:00Z"</span>
-  },
-  <span class="key">"proof"</span>: {
-    <span class="key">"type"</span>: <span class="string">"Ed25519Signature2020"</span>,       <span class="comment">// Classical signature</span>
-    <span class="key">"proofValue"</span>: <span class="string">"base64..."</span>
-  },
-  <span class="key">"manifestProof"</span>: {
-    <span class="key">"type"</span>: <span class="string">"Ed25519Signature2020"</span>,       <span class="comment">// Envelope integrity</span>
-    <span class="key">"proofValue"</span>: <span class="string">"base64..."</span>
-  },
-  <span class="key">"pqManifestProof"</span>: {
-    <span class="key">"type"</span>: <span class="string">"MLDSASignature2024"</span>,         <span class="comment">// Post-quantum proof</span>
-    <span class="key">"proofValue"</span>: <span class="string">"base64..."</span>
-  }
-}</pre>
-    </div>
-  </section>
-
-  <!-- What Gets Checked -->
-  <section class="container mt-3">
-    <div class="section-heading">
-      <h2>What Gets Checked</h2>
-    </div>
-    <div class="card-grid" style="max-width:800px;margin:0 auto;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-      <div class="feature-card" style="padding:1.25rem">
-        <h3 style="font-size:0.95rem;color:var(--accent-green)">&#x2713; Document Integrity</h3>
-        <p style="font-size:0.85rem">SHA-256 hash of file matches manifest</p>
-      </div>
-      <div class="feature-card" style="padding:1.25rem">
-        <h3 style="font-size:0.95rem;color:var(--accent-green)">&#x2713; Manifest Integrity</h3>
-        <p style="font-size:0.85rem">Envelope signature prevents tampering</p>
-      </div>
-      <div class="feature-card" style="padding:1.25rem">
-        <h3 style="font-size:0.95rem;color:var(--accent-green)">&#x2713; DID Resolution</h3>
-        <p style="font-size:0.85rem">Signer's DID document fetched and parsed</p>
-      </div>
-      <div class="feature-card" style="padding:1.25rem">
-        <h3 style="font-size:0.95rem;color:var(--accent-green)">&#x2713; Signature Valid</h3>
-        <p style="font-size:0.85rem">Ed25519 signature verified against public key</p>
-      </div>
-      <div class="feature-card" style="padding:1.25rem">
-        <h3 style="font-size:0.95rem;color:var(--accent-purple)">&#x2713; PQ Manifest Proof</h3>
-        <p style="font-size:0.85rem">ML-DSA-44 post-quantum signature verified</p>
-      </div>
-      <div class="feature-card" style="padding:1.25rem">
-        <h3 style="font-size:0.95rem;color:var(--accent-amber)">&#x2713; DNSSEC Anchor</h3>
-        <p style="font-size:0.85rem">TLSA record matches DID public key</p>
-      </div>
-      <div class="feature-card" style="padding:1.25rem">
-        <h3 style="font-size:0.95rem;color:var(--accent-amber)">&#x2713; Trust Registry</h3>
-        <p style="font-size:0.85rem">Signer authorized in trust ecosystem</p>
-      </div>
-      <div class="feature-card" style="padding:1.25rem">
-        <h3 style="font-size:0.95rem;color:var(--accent-blue)">&#x2713; Not Expired</h3>
-        <p style="font-size:0.85rem">Signature within validity period</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="container mt-3 mb-3">
-    <div class="cta-banner">
-      <h2>Try It Right Now</h2>
-      <p>Install the TrustDID browser extension, then browse this site. Every page should show green — fully verified with maximum assurance, including post-quantum signatures.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a href="https://trustdid.ca" class="btn btn-primary" target="_blank" rel="noopener">Get the Extension &#x2192;</a>
-        <a href="../gallery/" class="btn btn-outline">Browse Signed Documents</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-links">
-        <a href="../">Home</a>
-        <a href="../gallery/">Documents</a>
-        <a href="./">How It Works</a>
-        <a href="../about/">About TrustDID</a>
-        <a href="https://trustdid.ca" target="_blank" rel="noopener">trustdid.ca</a>
+      <span>© 2026 Jacques Latour</span>
+      <div class="foot-nav">
+        <a href="/">Home</a>
+        <a href="/demo/valid/">Valid demo</a>
+        <a href="/demo/tampered/">Tampered demo</a>
+        <a href="/about/">About</a>
+        <a href="https://trustdid.ca" target="_blank" rel="noopener">trustdid.ca ↗</a>
       </div>
-      <p>A living demonstration of the verified web, powered by TrustDID</p>
-      <div class="footer-did">did:web:jacqueslatour.ca</div>
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/trustdid-verify.js" defer></script>
 </body>
 </html>

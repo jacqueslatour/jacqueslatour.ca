@@ -3,196 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About TrustDID — Verified Web Showcase</title>
-  <meta name="description" content="Learn about TrustDID — a self-sovereign identity system for document signing and verification using decentralized identifiers.">
+  <title>About — A Signed Web</title>
+  <meta name="description" content="About this demonstration site — why it exists, what it does not try to be, and how to reproduce it on your own domain.">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-  <div class="grid-bg"></div>
 
-  <!-- Trust Bar -->
   <div class="trust-bar">
     <div class="container">
-      <span class="label">did:web:jacqueslatour.ca</span>
-      <span class="separator">|</span>
-      <span>MAXIMUM ASSURANCE</span>
-      <span class="separator">|</span>
-      <span>DNSSEC + Trust Registry</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>Signed by</span>
+      <code>did:web:jacqueslatour.ca</code>
     </div>
   </div>
 
-  <!-- Navigation -->
-  <nav class="nav">
+  <nav class="nav" aria-label="Primary">
     <div class="container">
-      <a href="../" class="nav-logo">
-        <span class="logo-icon">V</span>
-        Verified Web
-      </a>
+      <a href="/" class="nav-logo"><span class="seal" aria-hidden="true">✓</span> A Signed Web</a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="../">Home</a></li>
-        <li><a href="../gallery/">Documents</a></li>
-        <li><a href="../how-it-works/">How It Works</a></li>
-        <li><a href="./" class="active">About</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/demo/valid/">Valid</a></li>
+        <li><a href="/demo/tampered/">Tampered</a></li>
+        <li><a href="/how-it-works/">How it works</a></li>
+        <li><a href="/about/" class="active">About</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <div class="container">
-      <h1>About TrustDID</h1>
-      <p>A self-sovereign document signing and verification system built on open standards.</p>
+  <main class="container" style="padding-top:2.5rem; padding-bottom:3rem;">
+    <div class="prose">
+
+      <div class="section-lede">About</div>
+      <h1>A demonstration, not a product.</h1>
+
+      <p>
+        This site exists to make one idea tangible: that a web page can
+        carry its own proof of authenticity, and that anyone — reader,
+        journalist, auditor, machine — can check that proof in a single
+        click. Every page you see here is cryptographically signed and
+        verifiable against a public decentralized identity. There is no
+        login. There is no lock-in. There is no ledger.
+      </p>
+
+      <h2>Why build this</h2>
+
+      <p>
+        Documents used to be physical. A cheque had a signature, a
+        certificate had a seal, a newspaper had a masthead. When those
+        artefacts moved onto the web, most of that authenticity signalling
+        didn't come with them. Screenshots spread faster than press
+        releases. AI-generated copies are convincing. Modifying a PDF is a
+        right-click away.
+      </p>
+
+      <p>
+        The technology to fix this has existed for decades — public-key
+        cryptography, DNSSEC, decentralized identifiers. What has been
+        missing is a one-click way for an ordinary reader to use it. This
+        site puts all three pieces in one place: signed content, a public
+        identity, and a verifier that lives inline.
+      </p>
+
+      <h2>What this site <em>is not</em></h2>
+
+      <ul>
+        <li>Not a commercial service. There is nothing to sign up for.</li>
+        <li>Not a claim that the <em>content</em> of signed pages is true — only that it has not been altered since the signer attested to it.</li>
+        <li>Not a replacement for TLS. HTTPS keeps the channel private; signatures keep the document provenance auditable.</li>
+        <li>Not a blockchain project. No token, no ledger, no gas.</li>
+      </ul>
+
+      <h2>How it is built</h2>
+
+      <p>
+        The pages here are plain HTML and CSS, signed with the open-source
+        <a href="https://trustdid.ca" target="_blank" rel="noopener">TrustDID</a>
+        toolkit. Signing happens offline with a keypair that lives on the
+        publisher's machine. Verification runs through a public API and a
+        small embeddable script (<code>trustdid-verify.js</code>) that any
+        site can drop in with a single <code>&lt;script&gt;</code> tag.
+      </p>
+
+      <p>
+        The embedded widget's source is in this repository, alongside the
+        rest of the site. It has no runtime dependencies, contains no
+        tracking, and renders all server-returned fields with plain
+        <code>textContent</code> to avoid HTML injection through crafted
+        signatures.
+      </p>
+
+      <h2>Reproducing this</h2>
+
+      <p>
+        To run the same demonstration on your own domain you need:
+      </p>
+
+      <ul>
+        <li>A domain with DNSSEC and a valid TLS certificate.</li>
+        <li>A <code>did:web</code> document at <code>/.well-known/did.json</code>.</li>
+        <li>The TrustDID signing toolkit to produce <code>.vrfy</code> sidecars next to each page.</li>
+        <li>This site's <code>js/trustdid-verify.js</code> dropped into your page, plus a <code>data-trustdid-vrfy</code> attribute wherever you want a Verify button.</li>
+      </ul>
+
+      <p>
+        The entire pipeline — signing, hosting, verifying — is documented
+        at <a href="https://trustdid.ca" target="_blank" rel="noopener">trustdid.ca</a>.
+      </p>
+
+      <h2>Contact</h2>
+
+      <p>
+        Questions, corrections, or curiosity?
+        Reach Jacques at
+        <a href="mailto:jacques@jacqueslatour.ca">jacques@jacqueslatour.ca</a>.
+      </p>
+
     </div>
-  </section>
+  </main>
 
-  <!-- About Content -->
-  <section class="container">
-    <div class="about-content">
-      <h2>What Is TrustDID?</h2>
-      <p>
-        TrustDID is a document signing and verification system that uses
-        <strong>Decentralized Identifiers</strong> (DIDs) — a W3C open standard — to
-        establish verifiable digital identity without relying on centralized certificate
-        authorities or blockchain networks.
-      </p>
-      <p>
-        With TrustDID, any organization can sign documents using cryptographic keys tied
-        to their domain. Anyone can verify those signatures by resolving the signer's DID
-        document — a publicly accessible JSON file hosted on the signer's own web server.
-      </p>
-
-      <h2>How Is This Different?</h2>
-      <p>
-        Traditional digital signatures depend on certificate authorities — trusted third
-        parties that can be compromised, revoked, or subject to jurisdiction. TrustDID
-        replaces that dependency with a self-sovereign model where your identity is your
-        domain, your keys are your own, and verification requires no intermediary.
-      </p>
-
-      <div class="about-features">
-        <div class="about-feature">
-          <h4>No Blockchain</h4>
-          <p>Uses DNS and HTTPS infrastructure that already exists. No tokens, no consensus, no fees.</p>
-        </div>
-        <div class="about-feature">
-          <h4>No Cloud Lock-in</h4>
-          <p>Keys live on your filesystem. Sign documents offline. Host your DID on any web server.</p>
-        </div>
-        <div class="about-feature">
-          <h4>Post-Quantum Ready</h4>
-          <p>Every signature includes ML-DSA-44 alongside Ed25519, protecting documents against future quantum threats.</p>
-        </div>
-        <div class="about-feature">
-          <h4>Privacy First</h4>
-          <p>Verification happens locally. No document content is ever uploaded. The browser extension only sends the manifest URL for advanced verification.</p>
-        </div>
-      </div>
-
-      <h2>What Is did:web?</h2>
-      <p>
-        <code>did:web</code> is a DID method that maps decentralized identifiers to
-        standard HTTPS URLs. A DID like <code>did:web:jacqueslatour.ca</code> resolves
-        to <code>https://jacqueslatour.ca/.well-known/did.json</code> — a JSON document
-        containing the signer's public keys.
-      </p>
-      <p>
-        This means anyone can look up a signer's public keys simply by fetching a URL.
-        No special infrastructure, no blockchain queries, no proprietary protocols. Just
-        the web as it already works.
-      </p>
-
-      <h2>The Three-Layer Trust Model</h2>
-      <p>
-        TrustDID uses layered assurance levels so relying parties can choose how much
-        verification they need:
-      </p>
-      <ol style="color:var(--text-secondary)">
-        <li style="margin-bottom:0.75rem">
-          <strong class="text-blue">Standard</strong> — Cryptographic signature verified against
-          the signer's DID document. Proves the signer holds the private key.
-        </li>
-        <li style="margin-bottom:0.75rem">
-          <strong class="text-amber">High</strong> — Adds DNSSEC verification. A TLSA record
-          in DNS anchors the signer's public key to their domain with cryptographic proof,
-          independent of the web server.
-        </li>
-        <li style="margin-bottom:0.75rem">
-          <strong class="text-green">Maximum</strong> — Adds Trust Registry verification. The
-          signer is registered in a trust ecosystem, providing organizational identity
-          assurance beyond cryptographic proof.
-        </li>
-      </ol>
-      <p>
-        This site operates at <strong class="text-green">Maximum Assurance</strong> —
-        every page is signed by a DID with both DNSSEC anchoring and Trust Registry
-        authorization.
-      </p>
-
-      <h2>What Can Be Signed?</h2>
-      <p>
-        TrustDID can sign any file: HTML pages, PDFs, Word documents, images,
-        spreadsheets, JSON data, source code — anything with a file path. The signing
-        tool computes a SHA-256 hash of the file and creates a detached
-        <code>.vrfy</code> manifest alongside it.
-      </p>
-      <p>
-        For websites, the <code>trustdid_sign_dir</code> tool batch-signs every file in a
-        directory tree, making it trivial to publish a fully verified website like this one.
-      </p>
-
-      <h2>Open Source</h2>
-      <p>
-        TrustDID is open source. The signing tools, verification library, and browser
-        extensions are available for review and contribution.
-      </p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem">
-        <a href="https://trustdid.ca" class="btn btn-primary" target="_blank" rel="noopener">Visit trustdid.ca</a>
-        <a href="https://trustdid.ca/stealth/demo/" class="btn btn-outline" target="_blank" rel="noopener">View Demo Scenarios</a>
-      </div>
-
-      <h2>About This Site</h2>
-      <p>
-        This website — <code>jacqueslatour.ca</code> — serves as a living demonstration
-        of what a cryptographically verified website looks like. Every HTML page,
-        stylesheet, and JavaScript file has been signed using
-        <code>did:web:jacqueslatour.ca#active</code> and accompanied by a
-        <code>.vrfy</code> verification manifest.
-      </p>
-      <p>
-        The mock documents in the <a href="../gallery/">Document Gallery</a> are fictional
-        but the verification is real. Install the
-        <a href="../how-it-works/">browser extension</a> and see for yourself.
-      </p>
-    </div>
-  </section>
-
-  <!-- DID Document Link -->
-  <section class="container mb-3">
-    <div class="cta-banner" style="max-width:720px;margin-left:auto;margin-right:auto">
-      <h2>View the DID Document</h2>
-      <p>The decentralized identifier for this domain is publicly accessible. It contains the public keys used to verify every signature on this site.</p>
-      <a href="../.well-known/did.json" class="btn btn-outline" target="_blank">View did.json &#x2192;</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-links">
-        <a href="../">Home</a>
-        <a href="../gallery/">Documents</a>
-        <a href="../how-it-works/">How It Works</a>
-        <a href="./">About TrustDID</a>
-        <a href="https://trustdid.ca" target="_blank" rel="noopener">trustdid.ca</a>
+      <span>© 2026 Jacques Latour</span>
+      <div class="foot-nav">
+        <a href="/">Home</a>
+        <a href="/demo/valid/">Valid demo</a>
+        <a href="/demo/tampered/">Tampered demo</a>
+        <a href="/how-it-works/">How it works</a>
+        <a href="https://trustdid.ca" target="_blank" rel="noopener">trustdid.ca ↗</a>
       </div>
-      <p>A living demonstration of the verified web, powered by TrustDID</p>
-      <div class="footer-did">did:web:jacqueslatour.ca</div>
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/trustdid-verify.js" defer></script>
 </body>
 </html>
