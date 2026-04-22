@@ -196,7 +196,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
 .pillar .pillar-action { font-size: 0.9rem; font-weight: 600; }
 
 /* ── Section headings ──────────────────────────────────────────────────── */
-.section { margin: 4rem 0; }
+.section { margin-top: 4rem; margin-bottom: 4rem; }
 .section-lede {
   font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--muted);
