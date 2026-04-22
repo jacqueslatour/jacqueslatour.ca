@@ -201,6 +201,7 @@
     invalid_manifest:       'Signature file invalid',
     missing_manifest_proof: 'Signature missing',
     manifest_integrity_failed: 'Signature file has been altered',
+    document_integrity_failed: 'Document has been modified since signing',
     manifest_proof_mismatch:'Signature hash mismatch',
     did_fetch_error:        'Could not resolve signer identity',
     did_fetch_timeout:      'Identity resolution timed out',
@@ -235,11 +236,83 @@
   ];
 
   // ──────────────────────────────────────────────────────────── verify() ────
+  //
+  // Full verification is two half-moons that meet in the middle:
+  //
+  //   Server-side (API)   — signature chain: Ed25519 + ML-DSA-44 over the
+  //                         manifest, DID resolution, DNS anchors, trust
+  //                         registry. The API never sees the document, so
+  //                         it cannot check that the referenced bytes still
+  //                         hash to what the manifest claims.
+  //
+  //   Client-side (here)  — document integrity: fetch the .vrfy to read
+  //                         payload.documentHash, fetch the document
+  //                         bytes, SHA-256 them in the browser, compare.
+  //                         Catches tampering the API cannot see.
+  //
+  // Both must pass for the overall result to be valid.
 
-  function verify(url) {
-    var vrfyUrl = deriveVrfyUrl(resolveUrl(url));
-    if (!vrfyUrl) return Promise.reject(new Error('missing url'));
+  // Strip the leading // comment header from a .vrfy file and parse JSON.
+  function parseVrfyBody(text) {
+    var lines = String(text).split('\n');
+    while (lines.length && /^\s*(\/\/|$)/.test(lines[0])) lines.shift();
+    return JSON.parse(lines.join('\n'));
+  }
 
+  function bytesToHex(buf) {
+    var view = new Uint8Array(buf);
+    var out = '';
+    for (var i = 0; i < view.length; i++) {
+      var h = view[i].toString(16);
+      out += h.length === 1 ? '0' + h : h;
+    }
+    return out;
+  }
+
+  // Derive the document URL from a .vrfy URL by trimming the extension.
+  function stripVrfy(vrfyUrl) {
+    return vrfyUrl.replace(/\.vrfy(\?.*)?$/, '$1');
+  }
+
+  // Fetch the document bytes and SHA-256 them in the browser.
+  function clientSideDocumentCheck(vrfyUrl) {
+    if (!(window.crypto && window.crypto.subtle && window.crypto.subtle.digest)) {
+      return Promise.resolve({ ok: null, reason: 'SubtleCrypto unavailable' });
+    }
+    return fetch(vrfyUrl, { credentials: 'omit', cache: 'no-store' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status + ' fetching .vrfy');
+        return r.text();
+      })
+      .then(function (vrfyText) {
+        var manifest = parseVrfyBody(vrfyText);
+        var expected = manifest && manifest.payload && manifest.payload.documentHash;
+        if (!expected) throw new Error('manifest has no documentHash');
+        var docUrl = stripVrfy(vrfyUrl);
+        return fetch(docUrl, { credentials: 'omit', cache: 'no-store' })
+          .then(function (r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status + ' fetching document');
+            return r.arrayBuffer();
+          })
+          .then(function (bytes) {
+            return window.crypto.subtle.digest('SHA-256', bytes)
+              .then(function (hashBuf) {
+                var actual = bytesToHex(hashBuf);
+                return {
+                  ok: actual.toLowerCase() === String(expected).toLowerCase(),
+                  expected: String(expected),
+                  computed: actual,
+                  fileName: manifest.payload.fileName
+                };
+              });
+          });
+      })
+      .catch(function (err) {
+        return { ok: null, reason: err.message || String(err) };
+      });
+  }
+
+  function callVerifyApi(vrfyUrl) {
     return fetch(API_BASE + '/api/v1/verify-advanced', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -249,7 +322,6 @@
     }).then(function (res) {
       return res.json().then(function (data) {
         if (!res.ok && !('valid' in data)) {
-          // Validation error (422) or similar — no verify payload.
           var msg = 'Verification request failed';
           if (Array.isArray(data.detail)) msg = data.detail.map(function (d) { return d.msg; }).join('; ');
           else if (typeof data.detail === 'string') msg = data.detail;
@@ -259,6 +331,40 @@
         }
         return data;
       });
+    });
+  }
+
+  function verify(url) {
+    var vrfyUrl = deriveVrfyUrl(resolveUrl(url));
+    if (!vrfyUrl) return Promise.reject(new Error('missing url'));
+
+    // Run both halves in parallel.
+    return Promise.all([
+      callVerifyApi(vrfyUrl),
+      clientSideDocumentCheck(vrfyUrl)
+    ]).then(function (pair) {
+      var api = pair[0];
+      var doc = pair[1];
+      api.checks = api.checks || {};
+
+      // Attach the client-side numbers so the UI can show expected vs computed.
+      if (doc.expected) api.expectedHash = doc.expected;
+      if (doc.computed) api.computedHash = doc.computed;
+
+      if (doc.ok === false) {
+        // Hard fail: bytes on the wire do not match what the signer attested to.
+        api.valid = false;
+        api.error = 'document_integrity_failed';
+        api.message = 'The document no longer matches its signed hash. It has been modified since it was signed.';
+        api.checks.document_integrity = false;
+      } else if (doc.ok === true) {
+        api.checks.document_integrity = true;
+      }
+      // doc.ok === null: could not run the client-side check (e.g. CORS,
+      // SubtleCrypto missing, network). Leave the API result unchanged but
+      // expose the reason so the caller can mention the partial result.
+      if (doc.ok === null) api.documentCheckSkipped = doc.reason || 'unavailable';
+      return api;
     });
   }
 
@@ -379,6 +485,22 @@
     var body = pop.__body;
 
     if (result.signer)    addField(body, 'Claimed signer', result.signer);
+
+    // When the document has been modified, show the expected vs. computed
+    // hashes side-by-side — same info the browser extension reports, same
+    // style as a git diff.
+    if (result.expectedHash && result.computedHash) {
+      var hashSection = el('div', 'tdv-popover__section');
+      var expCode = el('code');
+      expCode.textContent = String(result.expectedHash).slice(0, 16) + '…';
+      expCode.title = result.expectedHash;
+      addField(hashSection, 'Expected', expCode);
+      var actCode = el('code');
+      actCode.textContent = String(result.computedHash).slice(0, 16) + '…';
+      actCode.title = result.computedHash;
+      addField(hashSection, 'Computed', actCode);
+      body.appendChild(hashSection);
+    }
 
     var reason = result.message ||
       ERROR_LABELS[result.error] ||
