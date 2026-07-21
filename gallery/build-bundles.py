@@ -10,8 +10,8 @@ For each sample document this script:
      the structure is complete. It never overwrites an existing .vrfy — so once
      you sign the real ones with your TrustDID key, re-running is safe.
   3. Writes a per-bundle HOW-TO-VERIFY.txt.
-  4. Zips {document.html, document.html.vrfy, HOW-TO-VERIFY.txt,
-     trustdid-verify.js} into gallery/bundles/<slug>.zip.
+  4. Zips {document.html, document.html.vrfy, HOW-TO-VERIFY.txt} into
+     gallery/bundles/<slug>.zip.
 
 Run from anywhere:  python gallery/build-bundles.py
 Re-run it after re-signing to refresh the zips with the real .vrfy files.
@@ -46,56 +46,15 @@ Document : {title}
 File     : {docfile}
 Issuer   : {did}
 
-This bundle contains everything needed to confirm two things:
-  (1) WHO issued this document, and
-  (2) that it has NOT been altered by a single byte since it was signed.
+  1. Extract all files in this bundle into a single folder, keeping
+     {docfile} and its {vrfyfile} sidecar together.
 
-Files in this bundle
----------------------
-  {docfile}          the document itself (open it in any web browser)
-  {vrfyfile}     the cryptographic signature manifest (the ".vrfy" sidecar)
-  trustdid-verify.js      the self-contained verifier used by the document
-  HOW-TO-VERIFY.txt       this file
+  2. Verify the document with TrustDID Verify: go to https://trustdid.ca
+     and open {docfile} (or its {vrfyfile} sidecar).
 
-You can verify in any of three ways.
-
-Option 1 - In your browser (easiest)
-------------------------------------
-  1. Keep all four files together in the same folder.
-  2. Open {docfile} in a web browser.
-  3. Click the "Verify this document" button near the bottom.
-  A green result confirms the signature and that the document is unmodified.
-  (An internet connection is needed to resolve the issuer's public identity.)
-
-Option 2 - Online, without trusting this folder
------------------------------------------------
-  1. Host {docfile} and {vrfyfile} at any public URL
-     (or use your own copy already published by the issuer).
-  2. Go to https://trustdid.ca and paste the document URL.
-
-Option 3 - Command line
------------------------
-  Compute the document's SHA-256 hash and compare it to the "documentHash"
-  field inside {vrfyfile}. They must match exactly.
-
-    # macOS / Linux
-    shasum -a 256 {docfile}
-
-    # Windows (PowerShell)
-    Get-FileHash {docfile} -Algorithm SHA256
-
-  Then confirm the signature over that hash against the issuer's public key,
-  published at:  https://jacqueslatour.ca/.well-known/did.json
-  The TrustDID toolkit at https://trustdid.ca automates this step.
-
-What a passing result proves
-----------------------------
-  - The document was signed by the private key behind {did},
-    whose public half is anchored to that domain's DNS and TLS certificate.
-  - Not one character of the document has changed since signing. If anyone
-    edits it, the hash changes and verification fails.
-
-Learn more: https://jacqueslatour.ca/how-it-works/
+A passing result confirms two things: the document was signed by {did}
+(a public identity anchored in DNS), and it has not been altered by a
+single byte since. Change one character and verification fails.
 """
 
 PLACEHOLDER_HEADER = """\
@@ -170,7 +129,6 @@ def main():
             z.write(doc_path, docfile)
             z.write(vrfy_path, vrfyfile)
             z.writestr("HOW-TO-VERIFY.txt", howto)
-            z.write(VERIFIER_DST, "trustdid-verify.js")
         print("built bundle             : bundles/" + slug + ".zip")
 
     print("done.")
