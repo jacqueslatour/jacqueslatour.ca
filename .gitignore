@@ -1,2 +1,8 @@
 # Claude Code machine-local config (not for a public repo)
 .claude/settings.local.json
+
+# Build tooling — kept local, not served on the public site.
+# Lives at gallery/build-bundles.py on each machine but is not tracked.
+# The .vrfy line stops a re-sign run from re-publishing a sidecar for it.
+gallery/build-bundles.py
+gallery/build-bundles.py.vrfy
