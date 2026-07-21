@@ -195,8 +195,31 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
 .pillar p { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.9rem; }
 .pillar .pillar-action { font-size: 0.9rem; font-weight: 600; }
 
+/* ── Document gallery cards ────────────────────────────────────────────── */
+.btn-sm { font-size: 0.85rem; padding: 0.5em 0.9em; }
+
+.doc-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem; margin: 2.5rem 0;
+}
+.doc-card {
+  display: flex; flex-direction: column;
+  background: var(--vellum); border: 1px solid var(--rule);
+  border-left: 3px solid var(--pass);
+  border-radius: var(--radius); padding: 1.5rem;
+}
+.doc-card .cat {
+  font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--pass);
+  margin-bottom: 0.5rem;
+}
+.doc-card h3 { margin: 0 0 0.3rem; font-size: 1.15rem; }
+.doc-card .issuer { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.75rem; }
+.doc-card p { font-size: 0.95rem; color: var(--muted); margin-bottom: 1.25rem; }
+.doc-card .doc-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
 /* ── Section headings ──────────────────────────────────────────────────── */
-.section { margin: 4rem 0; }
+.section { margin: 4rem auto; }
 .section-lede {
   font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--muted);

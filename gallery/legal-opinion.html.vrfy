@@ -1,0 +1,28 @@
+// =========================================================================
+//  TrustDID(TM) -- Digital Document Verification Manifest
+//  *** PLACEHOLDER -- NOT YET SIGNED ***
+//
+//  This sidecar has the correct document hash and metadata, but the proof
+//  values below are placeholders. Re-sign this document with your TrustDID
+//  private key to produce a valid manifest, then re-run build-bundles.py.
+// =========================================================================
+{
+  "version": "3.0",
+  "type": "VerifiableDocumentSignature",
+  "did": "did:web:jacqueslatour.ca",
+  "payload": {
+    "did": "did:web:jacqueslatour.ca",
+    "documentHash": "afaf9a3a8828391a760df26a260c389b384098b192105117007e40a524def48e",
+    "hashAlgorithm": "SHA-256",
+    "timestamp": "PLACEHOLDER",
+    "fileName": "legal-opinion.html",
+    "fileSize": 8124,
+    "mimeType": "text/html"
+  },
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "verificationMethod": "did:web:jacqueslatour.ca#active",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "PLACEHOLDER_UNSIGNED"
+  }
+}

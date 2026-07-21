@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Independent Auditor's Report — Renaud Sylvestre LLP (sample) | A Signed Web</title>
+<meta name="description" content="A sample independent auditor's report carrying a TrustDID cryptographic signature. Verify it against did:web:jacqueslatour.ca.">
+<style>
+:root{
+  --ink:#2a2a28;--muted:#6b6860;--paper:#fdfbf6;--vellum:#f6f1e4;--rule:#e4dfd2;
+  --pass:#1f6f43;--fail:#a5322a;--warn:#b57a1b;
+  --serif:"Source Serif 4","Source Serif Pro",ui-serif,Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --tdv-pass:var(--pass);--tdv-fail:var(--fail);--tdv-warn:var(--warn);--tdv-accent:var(--pass);
+  --tdv-bg:var(--vellum);--tdv-ink:var(--ink);--tdv-muted:var(--muted);--tdv-rule:var(--rule);
+  --tdv-radius:4px;--tdv-font:var(--sans);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--vellum);color:var(--ink);font-family:var(--serif);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+code{font-family:var(--mono);font-size:.9em;background:rgba(0,0,0,.04);padding:.05em .3em;border-radius:3px}
+.ribbon{background:var(--ink);color:#f7f3e7;font-family:var(--sans);font-size:.78rem;letter-spacing:.02em;padding:.5rem 1rem;display:flex;gap:.6rem;align-items:center;justify-content:center;flex-wrap:wrap}
+.ribbon .dot{width:7px;height:7px;border-radius:50%;background:#6fd19a;display:inline-block}
+.ribbon code{background:rgba(255,255,255,.08);color:#f7f3e7}
+.ribbon a{color:#bfe6cf;text-decoration:none}
+.ribbon a:hover{text-decoration:underline}
+.sheet{max-width:44rem;margin:2rem auto;background:var(--paper);border:1px solid var(--rule);border-radius:4px;box-shadow:0 1px 0 rgba(0,0,0,.03),0 10px 30px rgba(0,0,0,.05);padding:3rem 3rem 2.25rem}
+@media(max-width:640px){.sheet{padding:1.75rem 1.25rem;margin:1rem}}
+.lh{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;border-bottom:2px solid var(--ink);padding-bottom:1rem}
+.lh .firm{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:-.01em;line-height:1.15}
+.lh .firm small{display:block;font-family:var(--sans);font-weight:600;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
+.lh .addr{font-family:var(--sans);font-size:.72rem;color:var(--muted);text-align:right;line-height:1.5;min-width:11rem}
+.meta{font-family:var(--sans);font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 1.75rem}
+h1{font-family:var(--serif);font-size:1.4rem;line-height:1.25;margin:0 0 1.5rem;text-align:center;letter-spacing:.01em}
+.body p{margin:0 0 1rem;font-size:1.02rem}
+.body h2{font-family:var(--serif);font-size:1.02rem;margin:1.5rem 0 .5rem}
+.recital{font-family:var(--sans);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.sig{margin-top:2.5rem;display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-end}
+.sig .who .rule{border-top:1px solid var(--ink);width:15rem;margin-bottom:.35rem}
+.sig .who .name{font-weight:600}
+.sig .who .role{font-family:var(--sans);font-size:.78rem;color:var(--muted)}
+.seal{width:4.75rem;height:4.75rem;border:2px solid var(--pass);color:var(--pass);border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--sans);font-size:.48rem;font-weight:700;letter-spacing:.06em;line-height:1.25;transform:rotate(-8deg);padding:.3rem}
+.verify{margin-top:2rem;padding:.9rem 1rem;border:1px dashed var(--rule);border-radius:4px;background:var(--vellum);font-family:var(--sans);font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.verify strong{color:var(--ink)}
+.verify .sp{flex:1;min-width:1rem}
+.disclaimer{margin-top:1.5rem;font-family:var(--sans);font-size:.72rem;color:var(--muted);text-align:center;line-height:1.55}
+.back{font-family:var(--sans);font-size:.82rem;text-align:center;margin:1.5rem 0 3rem}
+.back a{color:var(--pass);text-decoration:none}
+.back a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+  <div class="ribbon">
+    <span class="dot" aria-hidden="true"></span>
+    <span>Signed document — issuer</span>
+    <code>did:web:jacqueslatour.ca</code>
+    <span>·</span>
+    <a href="https://jacqueslatour.ca/gallery/">← Document gallery</a>
+  </div>
+
+  <main class="sheet">
+    <header class="lh">
+      <div class="firm">
+        Renaud&nbsp;Sylvestre&nbsp;LLP
+        <small>Chartered Professional Accountants</small>
+      </div>
+      <div class="addr">
+        1500 Bank Street, 4th Floor<br>
+        Ottawa, Ontario&nbsp;K1H&nbsp;7Z2<br>
+        +1 (613) 555-0188<br>
+        assurance@example.ca
+      </div>
+    </header>
+
+    <div class="meta">
+      <span>Engagement: NW-FY2025</span>
+      <span>April 20, 2026</span>
+    </div>
+
+    <h1>Independent Auditor&rsquo;s Report</h1>
+
+    <div class="body">
+      <p class="recital">To the Members of Northwind Co-operative</p>
+
+      <h2>Opinion</h2>
+      <p>
+        We have audited the financial statements of Northwind Co-operative (the
+        &ldquo;Co-operative&rdquo;), which comprise the statement of financial
+        position as at December 31, 2025, and the statements of operations,
+        changes in net assets, and cash flows for the year then ended, and notes
+        to the financial statements, including a summary of significant
+        accounting policies.
+      </p>
+      <p>
+        In our opinion, the accompanying financial statements present fairly, in
+        all material respects, the financial position of the Co-operative as at
+        December 31, 2025, and its financial performance and its cash flows for
+        the year then ended in accordance with Canadian accounting standards for
+        not-for-profit organizations.
+      </p>
+
+      <h2>Basis for opinion</h2>
+      <p>
+        We conducted our audit in accordance with Canadian generally accepted
+        auditing standards. Our responsibilities under those standards are
+        further described in the <em>Auditor&rsquo;s Responsibilities</em>
+        section of our report. We are independent of the Co-operative and have
+        fulfilled our other ethical responsibilities in accordance with the
+        relevant ethical requirements applicable to our audit. We believe that
+        the audit evidence we have obtained is sufficient and appropriate to
+        provide a basis for our opinion.
+      </p>
+    </div>
+
+    <div class="sig">
+      <div class="who">
+        <div class="rule" aria-hidden="true"></div>
+        <div class="name">Renaud Sylvestre LLP</div>
+        <div class="role">Chartered Professional Accountants, Licensed Public Accountants</div>
+      </div>
+      <div class="seal" aria-hidden="true">CPA&nbsp;ASSURANCE<br>did:web<br>SIGNED</div>
+    </div>
+
+    <div class="verify">
+      <span><strong>Verify this document:</strong> it carries a <code>.vrfy</code> cryptographic sidecar signed by the issuer.</span>
+      <span class="sp"></span>
+      <span data-trustdid-vrfy data-trustdid-vrfy-label="Verify this document"></span>
+    </div>
+
+    <p class="disclaimer">
+      This is a fictional document created solely to demonstrate TrustDID
+      cryptographic signing and verification. The firm, engagement, figures, and
+      facts are invented and do not constitute an audit opinion.
+    </p>
+
+    <p class="back"><a href="https://jacqueslatour.ca/gallery/">← Back to the document gallery</a></p>
+  </main>
+
+  <script src="trustdid-verify.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document gallery — vet before you trust | A Signed Web</title>
+  <meta name="description" content="Official-looking documents — legal opinions, notarial certificates, audited reports, registry certificates — each cryptographically signed and independently verifiable. Download a bundle and check it yourself.">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <div class="trust-bar">
+    <div class="container">
+      <span class="dot" aria-hidden="true"></span>
+      <span>This page is signed by</span>
+      <code>did:web:jacqueslatour.ca</code>
+      <span>— and so is every document below.</span>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <span class="seal" aria-hidden="true">✓</span>
+        A Signed Web
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/gallery/" class="active">Documents</a></li>
+        <li><a href="/demo/valid/">Valid</a></li>
+        <li><a href="/demo/tampered/">Tampered</a></li>
+        <li><a href="/how-it-works/">How it works</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow">Vet before you trust</div>
+      <h1>Documents that shouldn&rsquo;t be taken on faith</h1>
+      <p class="subtitle">
+        Legal opinions, notarial certificates, audited reports, government
+        registrations — the kind of paperwork people act on, wire money against,
+        and file with regulators. Each one below is cryptographically signed by
+        a public identity. Open it and verify it in one click, or download a
+        self-contained bundle and check it yourself, offline.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="container section">
+      <div class="section-lede">The gallery</div>
+      <h2>Four signed documents</h2>
+      <p class="muted" style="max-width:42rem">
+        These are fictional samples built to demonstrate verification. Each
+        carries a <code>.vrfy</code> sidecar; the <em>Verify</em> button on each
+        document confirms the signer&rsquo;s identity and that not a single byte
+        has changed since signing.
+      </p>
+
+      <div class="doc-grid">
+
+        <article class="doc-card">
+          <div class="cat">Lawyer</div>
+          <h3>Legal Opinion Letter</h3>
+          <div class="issuer">Bousquet Verreault LLP · Barristers &amp; Solicitors</div>
+          <p>An opinion on the enforceability of a master services agreement —
+             the kind of letter a counterparty relies on before closing.</p>
+          <div class="doc-actions">
+            <a href="/gallery/legal-opinion.html" class="btn btn-ghost btn-sm">View &amp; verify →</a>
+            <a href="/gallery/bundles/legal-opinion.zip" class="btn btn-primary btn-sm" download>Download bundle ↓</a>
+          </div>
+        </article>
+
+        <article class="doc-card">
+          <div class="cat">Notary</div>
+          <h3>Notarial Certificate</h3>
+          <div class="issuer">Laurent Okafor · Notary Public, Ontario</div>
+          <p>A certified true copy attestation — a notary&rsquo;s statement that
+             an annexed copy matches the original, byte for byte.</p>
+          <div class="doc-actions">
+            <a href="/gallery/notarial-certificate.html" class="btn btn-ghost btn-sm">View &amp; verify →</a>
+            <a href="/gallery/bundles/notarial-certificate.zip" class="btn btn-primary btn-sm" download>Download bundle ↓</a>
+          </div>
+        </article>
+
+        <article class="doc-card">
+          <div class="cat">Accountant</div>
+          <h3>Independent Auditor&rsquo;s Report</h3>
+          <div class="issuer">Renaud Sylvestre LLP · Chartered Professional Accountants</div>
+          <p>An unqualified audit opinion on a set of financial statements —
+             filed with members, lenders, and regulators.</p>
+          <div class="doc-actions">
+            <a href="/gallery/auditor-report.html" class="btn btn-ghost btn-sm">View &amp; verify →</a>
+            <a href="/gallery/bundles/auditor-report.zip" class="btn btn-primary btn-sm" download>Download bundle ↓</a>
+          </div>
+        </article>
+
+        <article class="doc-card">
+          <div class="cat">Public record</div>
+          <h3>Certificate of Good Standing</h3>
+          <div class="issuer">Office of the Registrar of Co-operatives</div>
+          <p>A registry attestation that an entity is active and in good
+             standing — often required to transact or bid.</p>
+          <div class="doc-actions">
+            <a href="/gallery/certificate-of-standing.html" class="btn btn-ghost btn-sm">View &amp; verify →</a>
+            <a href="/gallery/bundles/certificate-of-standing.zip" class="btn btn-primary btn-sm" download>Download bundle ↓</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="section-lede">What&rsquo;s in the bundle</div>
+      <h2>Everything a recipient needs to verify — nothing they don&rsquo;t</h2>
+      <p style="max-width:42rem">
+        Each <strong>Download bundle</strong> is a small <code>.zip</code>
+        containing four files. No account, no portal, no call-back to us
+        required to trust it.
+      </p>
+
+      <ul class="steps">
+        <li>
+          <h3>The document</h3>
+          <p>The signed <code>.html</code> file itself — open it in any browser.</p>
+        </li>
+        <li>
+          <h3>The <code>.vrfy</code> sidecar</h3>
+          <p>The cryptographic manifest: a SHA-256 hash of the document plus
+             Ed25519 and ML-DSA-44 post-quantum signatures over it.</p>
+        </li>
+        <li>
+          <h3><code>HOW-TO-VERIFY.txt</code></h3>
+          <p>Plain-language, step-by-step instructions to check the signature
+             three different ways.</p>
+        </li>
+        <li>
+          <h3><code>trustdid-verify.js</code></h3>
+          <p>The self-contained verifier, so the document&rsquo;s
+             <em>Verify</em> button works straight from the folder.</p>
+        </li>
+      </ul>
+
+      <p class="small muted" style="max-width:42rem">
+        A signature proves two things: <strong>who</strong> issued the document
+        (a public <code>did:web</code> identity anchored in DNS) and
+        <strong>that it hasn&rsquo;t changed</strong> since. Alter one character
+        and verification fails — try it on the
+        <a href="/demo/tampered/">tampered demo</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Jacques Latour — a demonstration of signed web documents.</span>
+      <div class="foot-nav">
+        <a href="/gallery/">Documents</a>
+        <a href="/demo/valid/">Valid demo</a>
+        <a href="/how-it-works/">How it works</a>
+        <a href="/about/">About</a>
+        <a href="https://trustdid.ca" target="_blank" rel="noopener">trustdid.ca ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  <script src="/js/trustdid-verify.js" defer></script>
+</body>
+</html>

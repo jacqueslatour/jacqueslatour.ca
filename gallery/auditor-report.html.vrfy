@@ -1,0 +1,28 @@
+// =========================================================================
+//  TrustDID(TM) -- Digital Document Verification Manifest
+//  *** PLACEHOLDER -- NOT YET SIGNED ***
+//
+//  This sidecar has the correct document hash and metadata, but the proof
+//  values below are placeholders. Re-sign this document with your TrustDID
+//  private key to produce a valid manifest, then re-run build-bundles.py.
+// =========================================================================
+{
+  "version": "3.0",
+  "type": "VerifiableDocumentSignature",
+  "did": "did:web:jacqueslatour.ca",
+  "payload": {
+    "did": "did:web:jacqueslatour.ca",
+    "documentHash": "028e7dbe7ad4f35e76310c40b59ec0ecc7317ea57ce8df776b514342491c1e3c",
+    "hashAlgorithm": "SHA-256",
+    "timestamp": "PLACEHOLDER",
+    "fileName": "auditor-report.html",
+    "fileSize": 7826,
+    "mimeType": "text/html"
+  },
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "verificationMethod": "did:web:jacqueslatour.ca#active",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "PLACEHOLDER_UNSIGNED"
+  }
+}

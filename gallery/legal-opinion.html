@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Opinion — Bousquet Verreault LLP (sample) | A Signed Web</title>
+<meta name="description" content="A sample legal opinion letter carrying a TrustDID cryptographic signature. Verify it against did:web:jacqueslatour.ca.">
+<style>
+:root{
+  --ink:#2a2a28;--muted:#6b6860;--paper:#fdfbf6;--vellum:#f6f1e4;--rule:#e4dfd2;
+  --pass:#1f6f43;--fail:#a5322a;--warn:#b57a1b;
+  --serif:"Source Serif 4","Source Serif Pro",ui-serif,Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --tdv-pass:var(--pass);--tdv-fail:var(--fail);--tdv-warn:var(--warn);--tdv-accent:var(--pass);
+  --tdv-bg:var(--vellum);--tdv-ink:var(--ink);--tdv-muted:var(--muted);--tdv-rule:var(--rule);
+  --tdv-radius:4px;--tdv-font:var(--sans);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--vellum);color:var(--ink);font-family:var(--serif);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+code{font-family:var(--mono);font-size:.9em;background:rgba(0,0,0,.04);padding:.05em .3em;border-radius:3px}
+.ribbon{background:var(--ink);color:#f7f3e7;font-family:var(--sans);font-size:.78rem;letter-spacing:.02em;padding:.5rem 1rem;display:flex;gap:.6rem;align-items:center;justify-content:center;flex-wrap:wrap}
+.ribbon .dot{width:7px;height:7px;border-radius:50%;background:#6fd19a;display:inline-block}
+.ribbon code{background:rgba(255,255,255,.08);color:#f7f3e7}
+.ribbon a{color:#bfe6cf;text-decoration:none}
+.ribbon a:hover{text-decoration:underline}
+.sheet{max-width:44rem;margin:2rem auto;background:var(--paper);border:1px solid var(--rule);border-radius:4px;box-shadow:0 1px 0 rgba(0,0,0,.03),0 10px 30px rgba(0,0,0,.05);padding:3rem 3rem 2.25rem}
+@media(max-width:640px){.sheet{padding:1.75rem 1.25rem;margin:1rem}}
+.lh{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;border-bottom:2px solid var(--ink);padding-bottom:1rem}
+.lh .firm{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:-.01em;line-height:1.15}
+.lh .firm small{display:block;font-family:var(--sans);font-weight:600;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
+.lh .addr{font-family:var(--sans);font-size:.72rem;color:var(--muted);text-align:right;line-height:1.5;min-width:11rem}
+.meta{font-family:var(--sans);font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 1.75rem}
+h1{font-family:var(--serif);font-size:1.4rem;line-height:1.25;margin:0 0 1.5rem;text-align:center;letter-spacing:.01em}
+.body p{margin:0 0 1rem;font-size:1.02rem}
+.body h2{font-family:var(--serif);font-size:1.02rem;margin:1.5rem 0 .5rem}
+.recital{font-family:var(--sans);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.sig{margin-top:2.5rem;display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-end}
+.sig .who .rule{border-top:1px solid var(--ink);width:15rem;margin-bottom:.35rem}
+.sig .who .name{font-weight:600}
+.sig .who .role{font-family:var(--sans);font-size:.78rem;color:var(--muted)}
+.seal{width:4.75rem;height:4.75rem;border:2px solid var(--pass);color:var(--pass);border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--sans);font-size:.48rem;font-weight:700;letter-spacing:.06em;line-height:1.25;transform:rotate(-8deg);padding:.3rem}
+.verify{margin-top:2rem;padding:.9rem 1rem;border:1px dashed var(--rule);border-radius:4px;background:var(--vellum);font-family:var(--sans);font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.verify strong{color:var(--ink)}
+.verify .sp{flex:1;min-width:1rem}
+.disclaimer{margin-top:1.5rem;font-family:var(--sans);font-size:.72rem;color:var(--muted);text-align:center;line-height:1.55}
+.back{font-family:var(--sans);font-size:.82rem;text-align:center;margin:1.5rem 0 3rem}
+.back a{color:var(--pass);text-decoration:none}
+.back a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+  <div class="ribbon">
+    <span class="dot" aria-hidden="true"></span>
+    <span>Signed document — issuer</span>
+    <code>did:web:jacqueslatour.ca</code>
+    <span>·</span>
+    <a href="https://jacqueslatour.ca/gallery/">← Document gallery</a>
+  </div>
+
+  <main class="sheet">
+    <header class="lh">
+      <div class="firm">
+        Bousquet&nbsp;Verreault&nbsp;LLP
+        <small>Barristers &amp; Solicitors</small>
+      </div>
+      <div class="addr">
+        220 Laurier Avenue West, Suite 900<br>
+        Ottawa, Ontario&nbsp;K1P&nbsp;5Z9<br>
+        +1 (613) 555-0142<br>
+        counsel@example.ca
+      </div>
+    </header>
+
+    <div class="meta">
+      <span>Our file: 2026-0417-NW</span>
+      <span>April 20, 2026</span>
+    </div>
+
+    <h1>Legal Opinion — Enforceability of the<br>Master Services Agreement</h1>
+
+    <div class="body">
+      <p class="recital">To the Board of Directors, Northwind Co-operative</p>
+
+      <p>
+        We have acted as counsel to Northwind Co-operative (the
+        &ldquo;Co-operative&rdquo;) in connection with the Master Services
+        Agreement dated March 31, 2026 between the Co-operative and its
+        managed-infrastructure supplier (the &ldquo;Agreement&rdquo;). You have
+        asked for our opinion as to the validity and enforceability of the
+        Agreement under the laws of the Province of Ontario.
+      </p>
+
+      <h2>Scope of review</h2>
+      <p>
+        For the purposes of this opinion we have examined an executed copy of
+        the Agreement, the constating documents of the Co-operative, and a
+        certified copy of the resolution of the board authorising its
+        execution. We have assumed the genuineness of all signatures and the
+        authority of each counterparty, other than the Co-operative, to enter
+        into the Agreement.
+      </p>
+
+      <h2>Opinion</h2>
+      <p>
+        Based upon and subject to the foregoing, and to the qualifications set
+        out below, we are of the opinion that the Agreement has been duly
+        authorised, executed, and delivered by the Co-operative, and
+        constitutes a legal, valid, and binding obligation of the Co-operative,
+        enforceable against it in accordance with its terms.
+      </p>
+
+      <h2>Qualifications</h2>
+      <p>
+        This opinion is subject to applicable bankruptcy, insolvency, and other
+        laws of general application affecting the enforcement of creditors&rsquo;
+        rights, and to the discretion of a court in granting equitable
+        remedies. It is limited to the laws of Ontario and the federal laws of
+        Canada applicable therein, and is given as of the date first written
+        above.
+      </p>
+    </div>
+
+    <div class="sig">
+      <div class="who">
+        <div class="rule" aria-hidden="true"></div>
+        <div class="name">Hélène Bousquet</div>
+        <div class="role">Partner, Bousquet Verreault LLP · LSO #45118R</div>
+      </div>
+      <div class="seal" aria-hidden="true">CRYPTO&shy;GRAPHIC&nbsp;SEAL<br>did:web</div>
+    </div>
+
+    <div class="verify">
+      <span><strong>Verify this document:</strong> it carries a <code>.vrfy</code> cryptographic sidecar signed by the issuer.</span>
+      <span class="sp"></span>
+      <span data-trustdid-vrfy data-trustdid-vrfy-label="Verify this document"></span>
+    </div>
+
+    <p class="disclaimer">
+      This is a fictional document created solely to demonstrate TrustDID
+      cryptographic signing and verification. The firm, individuals, file
+      number, and facts are invented and do not constitute legal advice.
+    </p>
+
+    <p class="back"><a href="https://jacqueslatour.ca/gallery/">← Back to the document gallery</a></p>
+  </main>
+
+  <script src="trustdid-verify.js" defer></script>
+</body>
+</html>
