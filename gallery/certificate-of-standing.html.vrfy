@@ -1,10 +1,24 @@
 // =========================================================================
 //  TrustDID(TM) -- Digital Document Verification Manifest
-//  *** PLACEHOLDER -- NOT YET SIGNED ***
+//  Copyright (c) 2026 TrustDID Solutions Inc. All rights reserved.
+//  PATENT PENDING
+// =========================================================================
 //
-//  This sidecar has the correct document hash and metadata, but the proof
-//  values below are placeholders. Re-sign this document with your TrustDID
-//  private key to produce a valid manifest, then re-run build-bundles.py.
+//  This .vrfy file is a cryptographic proof of authenticity and integrity
+//  for the accompanying document.
+//
+//  To verify this document, download the TrustDID verification toolkit:
+//
+//      https://trustdid.ca
+//
+//  TrustDID builds cryptographic document authentication and verification
+//  systems that combine Decentralized Identifiers (DIDs), DNS assurance,
+//  and trust registry authorization. Our patent-pending architecture
+//  provides progressive assurance levels -- from cryptographic verification
+//  to multi-channel validation -- enabling organizations to establish
+//  verifiable digital trust without centralized certificate authorities.
+//
+//  Learn more at https://trustdid.ca
 // =========================================================================
 {
   "version": "3.0",
@@ -14,15 +28,30 @@
     "did": "did:web:jacqueslatour.ca",
     "documentHash": "1f2cc17f20a28ca989271d9f7f78fb2473f6b58b4ace0b612a22523a7649726d",
     "hashAlgorithm": "SHA-256",
-    "timestamp": "PLACEHOLDER",
+    "timestamp": "2026-07-21T21:02:01.000026Z",
     "fileName": "certificate-of-standing.html",
     "fileSize": 7510,
     "mimeType": "text/html"
   },
   "proof": {
     "type": "Ed25519Signature2020",
+    "created": "2026-07-21T21:02:01.000026Z",
     "verificationMethod": "did:web:jacqueslatour.ca#active",
     "proofPurpose": "assertionMethod",
-    "proofValue": "PLACEHOLDER_UNSIGNED"
+    "proofValue": "6eTtiU5QyEwkLNH7O3Zu6/WdrKl9368aqS/Rwe4VbKj2w3/9j8timHH3I+VkziWvRMzQCYZlGnFzmwPdRlQ9CQ=="
+  },
+  "manifestProof": {
+    "type": "Ed25519Signature2020",
+    "created": "2026-07-21T21:02:01.000026Z",
+    "verificationMethod": "did:web:jacqueslatour.ca#active",
+    "proofPurpose": "authentication",
+    "proofValue": "akGdrZalgcmBDmUNKu0iq4pTIEMmG7IaYeuWbq+ravqgaUffT9pq/uVNn3QrMWK6cyTLChEfCwv2096qEPMLAQ=="
+  },
+  "pqManifestProof": {
+    "type": "MLDSASignature2024",
+    "created": "2026-07-21T21:02:01.000026Z",
+    "verificationMethod": "did:web:jacqueslatour.ca#active-pq",
+    "proofPurpose": "authentication",
+    "proofValue": "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"
   }
 }
