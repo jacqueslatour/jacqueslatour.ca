@@ -1,26 +1,27 @@
-// =========================================================================
-//  TrustDID(TM) -- Digital Document Verification Manifest
-//  Copyright (c) 2026 TrustDID Solutions Inc. All rights reserved.
-//  PATENT PENDING
-// =========================================================================
-//
-//  This .vrfy file is a cryptographic proof of authenticity and integrity
-//  for the accompanying document.
-//
-//  To verify this document, download the TrustDID verification toolkit:
-//
-//      https://trustdid.ca
-//
-//  TrustDID builds cryptographic document authentication and verification
-//  systems that combine Decentralized Identifiers (DIDs), DNS assurance,
-//  and trust registry authorization. Our patent-pending architecture
-//  provides progressive assurance levels -- from cryptographic verification
-//  to multi-channel validation -- enabling organizations to establish
-//  verifiable digital trust without centralized certificate authorities.
-//
-//  Learn more at https://trustdid.ca
-// =========================================================================
 {
+  "_notice": [
+    "=========================================================================",
+    " TrustDID(TM) - Digital Document Verification Manifest",
+    " Copyright (c) 2026 TrustDID Solutions Inc. All rights reserved.",
+    " PATENT PENDING",
+    "=========================================================================",
+    "",
+    " This .vrfy file is a cryptographic proof of authenticity and integrity",
+    " for the accompanying document.",
+    "",
+    " To verify this document, download the TrustDID verification toolkit:",
+    "     https://trustdid.ca",
+    "",
+    " TrustDID builds cryptographic document authentication and verification",
+    " systems that combine Decentralized Identifiers (DIDs), DNS anchoring,",
+    " and trust registry authorization. Our patent-pending architecture",
+    " answers two questions separately - is the document authentic, and is",
+    " the signer trusted - enabling organizations to establish verifiable",
+    " digital trust without centralized certificate authorities.",
+    "",
+    " This notice is informational and is not covered by the signature.",
+    "========================================================================="
+  ],
   "version": "3.0",
   "type": "VerifiableDocumentSignature",
   "did": "did:web:jacqueslatour.ca",
@@ -28,30 +29,31 @@
     "did": "did:web:jacqueslatour.ca",
     "documentHash": "028e7dbe7ad4f35e76310c40b59ec0ecc7317ea57ce8df776b514342491c1e3c",
     "hashAlgorithm": "SHA-256",
-    "timestamp": "2026-07-21T21:34:46.957624Z",
+    "timestamp": "2026-09-08T22:59:38.560263Z",
     "fileName": "auditor-report.html",
     "fileSize": 7826,
-    "mimeType": "text/html"
+    "mimeType": "text/html",
+    "reason": "Demo site"
   },
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-07-21T21:34:46.957624Z",
+    "created": "2026-09-08T22:59:38.560263Z",
     "verificationMethod": "did:web:jacqueslatour.ca#active",
     "proofPurpose": "assertionMethod",
-    "proofValue": "XZXxD0fCOteiwTk7LqXCpdfNPSQP9Djx6hQAHSPiq+dw2KdA3is0aflY3XmX/3FX8yMrp7+E43LZ/2oQ9fAJBw=="
+    "proofValue": "oSbmdIL3jy6aSDgfTydX+YsekIgx/QPYySnU5+cnguLfwYukTpBRx/vu/Ez2y1jbaw6hOwBfW8TPMwJAsR8TCQ=="
   },
   "manifestProof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-07-21T21:34:46.957624Z",
+    "created": "2026-09-08T22:59:38.560263Z",
     "verificationMethod": "did:web:jacqueslatour.ca#active",
     "proofPurpose": "authentication",
-    "proofValue": "D3LlzlF4WUXQEUg29JTvp49MOHqdW1O/kzvZfiV7cYVGQ1hq9Qdt7amJwY5ipfidaLF1zhHbfgA/9llgeKM5BQ=="
+    "proofValue": "puMZa2slzZ0ZroLbFEtyFnHlBFaB6qW5UBIPLJ+SzASdScAuLeRIbvV0dCAM2qjp5OUyC6bNeyedbOYokoyTCQ=="
   },
   "pqManifestProof": {
     "type": "MLDSASignature2024",
-    "created": "2026-07-21T21:34:46.957624Z",
+    "created": "2026-09-08T22:59:38.560263Z",
     "verificationMethod": "did:web:jacqueslatour.ca#active-pq",
     "proofPurpose": "authentication",
-    "proofValue": "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"
+    "proofValue": "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"
   }
 }
