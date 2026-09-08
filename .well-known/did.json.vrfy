@@ -1,50 +1,51 @@
-// =========================================================================
-//  TrustDID(TM) -- Digital Document Verification Manifest
-//  Copyright (c) 2026 TrustDID Solutions Inc. All rights reserved.
-//  PATENT PENDING
-// =========================================================================
-//
-//  This .vrfy file is a cryptographic proof of authenticity and integrity
-//  for the accompanying document.
-//
-//  To verify this document, download the TrustDID verification toolkit:
-//
-//      https://trustdid.ca
-//
-//  TrustDID builds cryptographic document authentication and verification
-//  systems that combine Decentralized Identifiers (DIDs), DNS assurance,
-//  and trust registry authorization. Our patent-pending architecture
-//  provides progressive assurance levels -- from cryptographic verification
-//  to multi-channel validation -- enabling organizations to establish
-//  verifiable digital trust without centralized certificate authorities.
-//
-//  Learn more at https://trustdid.ca
-// =========================================================================
 {
+  "_notice": [
+    "=========================================================================",
+    " TrustDID(TM) - Digital Document Verification Manifest",
+    " Copyright (c) 2026 TrustDID Solutions Inc. All rights reserved.",
+    " PATENT PENDING",
+    "=========================================================================",
+    "",
+    " This .vrfy file is a cryptographic proof of authenticity and integrity",
+    " for the accompanying document.",
+    "",
+    " To verify this document, download the TrustDID verification toolkit:",
+    "     https://trustdid.ca",
+    "",
+    " TrustDID builds cryptographic document authentication and verification",
+    " systems that combine Decentralized Identifiers (DIDs), DNS anchoring,",
+    " and trust registry authorization. Our patent-pending architecture",
+    " answers two questions separately - is the document authentic, and is",
+    " the signer trusted - enabling organizations to establish verifiable",
+    " digital trust without centralized certificate authorities.",
+    "",
+    " This notice is informational and is not covered by the signature.",
+    "========================================================================="
+  ],
   "version": "2.0",
   "type": "VerifiableDocumentSignature",
   "did": "did:web:jacqueslatour.ca",
   "payload": {
     "did": "did:web:jacqueslatour.ca",
-    "documentHash": "460fcfccf8d4d21b62e307d2fac3a89c01a634ec8ca6bcf10e38438f133baef1",
+    "documentHash": "37815a66f71af04bf14e5409302929a5614a9733731b7a96781c764ad30a9f69",
     "hashAlgorithm": "SHA-256",
-    "timestamp": "2026-04-21T23:12:07.109115Z",
+    "timestamp": "2026-09-08T22:53:57.104698Z",
     "fileName": "did.json",
-    "fileSize": 3505,
+    "fileSize": 3253,
     "mimeType": "application/json"
   },
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-04-21T23:12:07.109115Z",
+    "created": "2026-09-08T22:53:57.104698Z",
     "verificationMethod": "did:web:jacqueslatour.ca#active",
     "proofPurpose": "assertionMethod",
-    "proofValue": "JQXwxsJ5BXzZeCoaCJlPpmORuqTuzrIaNNb9YHxhEMjxaRbiZAZ/SyixVCN1we+IA6qC8R8LRUVWhRA9roXFAQ=="
+    "proofValue": "Ms82jf19xODjBEaJmAqktJzzhITIrZSHFJtEU70nkEPv+P3bJMzHZebUbK5/7IiQYCYZzm4N1tZD7Uz3DyENCA=="
   },
   "manifestProof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-04-21T23:12:07.109115Z",
+    "created": "2026-09-08T22:53:57.104698Z",
     "verificationMethod": "did:web:jacqueslatour.ca#active",
     "proofPurpose": "authentication",
-    "proofValue": "jhbZ4jyiwOfZ+7Qb9bTKtwBpeNi3qPkET+3fwoZS9myoOy13fkePt9m/F/TWIocshPnrxQ47ApW8FpHCGx34Ag=="
+    "proofValue": "XSDkyZQhPX4RBBJaqC/ZPK86zH6VWODKtoNYOMpbdCEEjlFMcWVK7qc+sPX4krwNesVA8S2gazWFbzcX9cx6AA=="
   }
 }
