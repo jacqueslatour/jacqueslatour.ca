@@ -27,25 +27,25 @@
   "did": "did:web:jacqueslatour.ca",
   "payload": {
     "did": "did:web:jacqueslatour.ca",
-    "documentHash": "2d6b88e32252ae9eddd51da562ab0e13ca2ee107aa81ffc8939158192eb2bda6",
+    "documentHash": "6a8857eadd90e44c3c43c0da32c152f9d8385417c59747c5633e784966c385e6",
     "hashAlgorithm": "SHA-256",
-    "timestamp": "2026-09-08T23:52:15.201140Z",
+    "timestamp": "2026-09-09T02:37:17.458994Z",
     "fileName": "did.json",
-    "fileSize": 5975,
+    "fileSize": 3253,
     "mimeType": "application/json"
   },
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-09-08T23:52:15.201140Z",
-    "verificationMethod": "did:web:jacqueslatour.ca#jacques",
+    "created": "2026-09-09T02:37:17.458994Z",
+    "verificationMethod": "did:web:jacqueslatour.ca#active",
     "proofPurpose": "assertionMethod",
-    "proofValue": "ylrrVISm8JS88vnHUjKU3HWZOzNwkec9qhBy7TJsjGsDUur5gCMf/tc7jnStpJo6HVHi5hCMDLdq9C/sLIhyCg=="
+    "proofValue": "l5LBwjYyHTj3WY7M/HifytEGZDw5E2V+cR8C5/aad5fM5hMEZEyEcxtxJGZSOjTwbu92BdSwaVK5ukmrgqopCQ=="
   },
   "manifestProof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-09-08T23:52:15.201140Z",
-    "verificationMethod": "did:web:jacqueslatour.ca#jacques",
+    "created": "2026-09-09T02:37:17.458994Z",
+    "verificationMethod": "did:web:jacqueslatour.ca#active",
     "proofPurpose": "authentication",
-    "proofValue": "+4jusGKHJ7L+lkyTXquAX5K5TVamnL9GDE4unKOn816JCvPtZ7fBEqLrGPkVz3lTIwcAxVolGe2d4SjvKohbDQ=="
+    "proofValue": "3NB8zvsawlVNQPvoPSk6Y7HqEqzCqse843QELuJiNhte2tzX6nVfN1ZG09VKSwk6KO/Mltpj6+yLdJ7bfvqmCA=="
   }
 }
