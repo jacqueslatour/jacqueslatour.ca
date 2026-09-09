@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Press release — Tampered demo | A Signed Web</title>
-  <meta name="description" content="A signed press release whose content was altered after publication. Verify it yourself and check the verifier reject the change.">
+  <title>Services agreement — Tampered demo | A Signed Web</title>
+  <meta name="description" content="A signed services agreement whose contract value was altered after signing. Verify it yourself and watch the cryptographic check reject the change.">
   <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
       <span class="dot" aria-hidden="true" style="background:#e6a65a"></span>
       <span>Signed by</span>
       <code>did:web:jacqueslatour.ca</code>
-      <span>— but the page below no longer matches its signature.</span>
+      <span>— but the amount below no longer matches its signature.</span>
     </div>
   </div>
 
@@ -40,72 +40,73 @@
     <div class="banner is-fail" role="note">
       <span class="banner-icon" aria-hidden="true">✗</span>
       <div>
-        <strong>This page has been tampered with after signing.</strong>
-        The press release body was altered, but the original
-        <code>.vrfy</code> sidecar was not re-signed. Click verify and the
-        cryptographic check will catch the change.
+        <strong>This agreement was altered after signing.</strong>
+        The contract value was changed from <strong>$50,000</strong> to
+        <strong>$50,000,000</strong>, but the original <code>.vrfy</code>
+        sidecar was not re-signed. Click verify — the cryptographic check
+        will catch the change.
       </div>
     </div>
 
     <article class="document">
       <header class="doc-header">
-        <div class="doc-kicker">Press release</div>
-        <h1>Northwind Co-operative Fails ISO 27001 certification</h1>
-        <div class="byline">Ottawa, ON · April 18, 2026</div>
+        <div class="doc-kicker">Professional Services Agreement</div>
+        <h1>Platform services engagement — Northwind Co-operative</h1>
+        <div class="byline">Agreement No. NW-2026-0417 · Ottawa, ON · April 17, 2026</div>
       </header>
 
       <p>
-        Northwind Co-operative today announced that it has received ISO/IEC
-        27001:2022 certification for its information security management
-        system, following a successful audit by an accredited third-party
-        registrar. The certification covers all customer-facing services
-        operated by the co-operative.
+        This Professional Services Agreement (the "Agreement") is entered into
+        between <strong>Rideau Health Alliance</strong> (the "Client") and
+        <strong>Northwind Co-operative</strong> (the "Provider"), effective as
+        of the date of signature below.
       </p>
 
+      <h2>1. Scope of services</h2>
       <p>
-        The scope of the certification spans the co-operative's Ottawa and
-        Winnipeg data centres and includes its identity, membership, and
-        document-management platforms. The initial certificate is valid for
-        three years, with annual surveillance audits required to maintain
-        good standing.
+        The Provider will design, host, and operate a member identity and
+        document-verification platform for the Client, including onboarding of
+        up to five hundred staff accounts and the migration of existing records,
+        as set out in the attached Statement of Work.
       </p>
 
-      <h2>A deliberate, member-funded investment</h2>
-
+      <h2>2. Compensation</h2>
       <p>
-        "Our members asked us to prove — not assert — that their records
-        are handled carefully," said Marie Tremblay, the co-operative's
-        director of trust and safety. "Independent certification is the
-        clearest way we have to do that. It also forces us to keep those
-        commitments current, not just at the moment of audit."
+        In full consideration of the services described above, the Client shall
+        pay the Provider the total fixed contract value set out below, invoiced
+        in equal monthly instalments over the term.
       </p>
 
-      <p>
-        The certification process took fourteen months and involved the
-        review of approximately two hundred internal controls, including
-        risk-assessment practices, incident response procedures, supplier
-        management, and cryptographic key handling. No material
-        non-conformities were identified during the final audit stage.
+      <p style="margin:1.25rem 0; padding:1.1rem 1.25rem; border:1px solid var(--rule,#e2ddd2); border-radius:10px; background:rgba(0,0,0,0.02);">
+        <span style="display:block; font-size:0.75rem; letter-spacing:0.04em; text-transform:uppercase; color:#6b6b6b;">Total contract value</span>
+        <strong style="display:block; font-size:2.25rem; line-height:1.1; margin:0.15rem 0;">$50,000,000.00 CAD</strong>
+        <span style="color:#6b6b6b;">Fifty million Canadian dollars</span>
       </p>
 
-      <h2>About Northwind Co-operative</h2>
-
+      <h2>3. Term</h2>
       <p>
-        Northwind Co-operative is a not-for-profit member organisation
-        providing shared digital infrastructure to small community
-        institutions across Canada. It is governed by an elected board of
-        directors and holds no investor capital.
+        The initial term of this Agreement is twelve (12) months from the
+        effective date, renewable by mutual written agreement. Either party may
+        terminate for material breach on thirty (30) days' written notice.
+      </p>
+
+      <h2>4. Signature</h2>
+      <p>
+        Executed on behalf of the Provider and cryptographically signed with the
+        decentralized identifier <code>did:web:jacqueslatour.ca</code>. The
+        signature covers the entire contents of this document; any later change
+        to the text — including the contract value above — invalidates it.
       </p>
 
       <p class="muted small">
-        Media contact:
-        <a href="mailto:press@example.ca">press@example.ca</a> ·
-        This press release is a fictional example created for demonstration purposes.
+        This agreement is a fictional example created for demonstration
+        purposes. Rideau Health Alliance and Northwind Co-operative are not real
+        organisations.
       </p>
     </article>
 
     <div class="verify-strip">
-      <span><strong>Try it:</strong> verification should fail with a hash mismatch.</span>
+      <span><strong>Try it:</strong> the amount was inflated 1,000× — verification should fail with a hash mismatch.</span>
       <span class="spacer"></span>
       <span data-trustdid-vrfy data-trustdid-vrfy-label="Verify this document"></span>
     </div>

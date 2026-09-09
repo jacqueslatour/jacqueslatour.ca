@@ -144,6 +144,22 @@
     '  cursor: pointer; padding: 0.15rem 0.35rem; line-height: 1;',
     '}',
     '.tdv-popover__close:hover { color: var(--tdv-ink); }',
+    '.tdv-trust__headline {',
+    '  display: flex; align-items: center; gap: 0.45rem;',
+    '  font-weight: 600; font-size: 0.85rem; margin-bottom: 0.1rem;',
+    '}',
+    '.tdv-trust__dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; flex-shrink: 0; }',
+    '.tdv-trust__axes { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.5rem 0 0.15rem; }',
+    '.tdv-trust__axis {',
+    '  display: flex; flex-direction: column; gap: 0.08rem;',
+    '  padding: 0.3rem 0.5rem; border: 1px solid var(--tdv-rule);',
+    '  border-radius: 5px; background: rgba(0,0,0,0.02);',
+    '}',
+    '.tdv-trust__axis-k {',
+    '  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em;',
+    '  color: var(--tdv-muted);',
+    '}',
+    '.tdv-trust__axis-v { font-size: 0.78rem; font-weight: 600; color: var(--tdv-ink); }',
     ''
   ].join('\n');
 
@@ -439,6 +455,80 @@
     pop.__foot.appendChild(close);
   }
 
+  // Map the API's `colour` verdict to one of our palette tokens.
+  function trustColour(colour) {
+    switch (String(colour || '').toLowerCase()) {
+      case 'green':                return 'var(--tdv-pass)';
+      case 'amber': case 'yellow': return 'var(--tdv-warn)';
+      case 'red':                  return 'var(--tdv-fail)';
+      default:                     return 'var(--tdv-muted)';
+    }
+  }
+
+  // "issuer" -> "Issuer", "AUTHENTIC" -> "Authentic", "direct" -> "Direct".
+  function prettyWord(s) {
+    s = String(s || '').replace(/[_-]+/g, ' ').trim();
+    return s.replace(/\w\S*/g, function (w) {
+      return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+    });
+  }
+
+  function hasRichTrust(result) {
+    return !!(result.trust || result.trust_anchor_name || result.headline || result.explanation);
+  }
+
+  // The trust-registry lookup, as returned by the advanced API. `showVerdict`
+  // draws the coloured headline + Authenticity/Binding/Trust triad (used on the
+  // pass card). When false (used on the fail card, where the bytes didn't match)
+  // we show only the registry/authorization facts, so a genuine-but-altered
+  // document never gets a misleading green "trusted" badge.
+  function renderTrustSection(result, showVerdict) {
+    if (!hasRichTrust(result)) return null;
+    var sec = el('div', 'tdv-popover__section');
+
+    if (showVerdict && result.headline) {
+      var hl = el('div', 'tdv-trust__headline');
+      var dot = el('span', 'tdv-trust__dot');
+      dot.style.background = trustColour(result.colour);
+      hl.appendChild(dot);
+      hl.appendChild(el('span', null, result.headline));
+      sec.appendChild(hl);
+    }
+
+    if (showVerdict) {
+      var axes = [
+        ['Authenticity', result.authenticity],
+        ['Binding',      result.binding],
+        ['Trust',        result.trust]
+      ].filter(function (a) { return a[1]; });
+      if (axes.length) {
+        var triad = el('div', 'tdv-trust__axes');
+        axes.forEach(function (a) {
+          var pill = el('span', 'tdv-trust__axis');
+          pill.appendChild(el('span', 'tdv-trust__axis-k', a[0]));
+          pill.appendChild(el('span', 'tdv-trust__axis-v', prettyWord(a[1])));
+          triad.appendChild(pill);
+        });
+        sec.appendChild(triad);
+      }
+    }
+
+    if (result.trust_anchor_name) addField(sec, 'Registry', result.trust_anchor_name);
+    if (result.authorization) {
+      var role = 'Authorized ' + result.authorization;      // "Authorized issuer"
+      if (result.trust_path_type) role += ' · ' + result.trust_path_type;
+      if (typeof result.trust_hops === 'number') {
+        role += ' (' + result.trust_hops + ' hop' + (result.trust_hops === 1 ? '' : 's') + ')';
+      }
+      addField(sec, 'Authorization', role);
+    }
+
+    if (showVerdict && result.explanation) {
+      sec.appendChild(el('div', 'tdv-popover__msg', result.explanation));
+    }
+    return sec;
+  }
+
   function renderResult(result, vrfyUrl) {
     if (!result.valid) return renderFailure(result, vrfyUrl);
 
@@ -449,6 +539,11 @@
     if (result.timestamp) addField(body, 'Signed',  formatTimestamp(result.timestamp));
     if (result.pq_algo)   addField(body, 'PQ algo', result.pq_algo);
 
+    // Trust-registry lookup (headline + Authenticity/Binding/Trust + registry).
+    var trustSection = renderTrustSection(result, true);
+    if (trustSection) body.appendChild(trustSection);
+    var richTrust = hasRichTrust(result);
+
     var checks = result.checks || {};
     var section = el('div', 'tdv-popover__section');
     body.appendChild(section);
@@ -456,10 +551,10 @@
       if (!(k in checks) || checks[k] == null) return;
       var v = checks[k];
       var label = CHECK_LABELS[k] || k;
-      // trust_registry false == "not configured" (neutral), not a hard fail.
-      if (k === 'trust_registry' && v === false) {
-        addCheck(section, null, label, 'not configured');
-        return;
+      // Legacy boolean; the rich trust-registry section above supersedes it.
+      if (k === 'trust_registry') {
+        if (richTrust) return;
+        if (v === false) { addCheck(section, null, label, 'not configured'); return; }
       }
       if (typeof v === 'boolean')       addCheck(section, v, label);
       else if (typeof v === 'string')   addCheck(section, true, label, v);
@@ -481,6 +576,11 @@
     var body = pop.__body;
 
     if (result.signer)    addField(body, 'Claimed signer', result.signer);
+
+    // Identity facts only — the signer may be a genuine, registered issuer
+    // even when the bytes on this page are not what they signed.
+    var idSection = renderTrustSection(result, false);
+    if (idSection) body.appendChild(idSection);
 
     // When the document has been modified, show the expected vs. computed
     // hashes side-by-side — same info the browser extension reports, same
@@ -507,10 +607,14 @@
     if (Object.keys(checks).length) {
       var section = el('div', 'tdv-popover__section');
       body.appendChild(section);
+      var richTrust = hasRichTrust(result);
       CHECK_ORDER.forEach(function (k) {
         if (!(k in checks) || checks[k] == null) return;
         var v = checks[k];
         var label = CHECK_LABELS[k] || k;
+        // Rich trust section already shown above; don't also render the
+        // legacy boolean as a red ✗ (it isn't why verification failed).
+        if (k === 'trust_registry' && richTrust) return;
         if (typeof v === 'boolean') addCheck(section, v, label);
       });
       // surface error as the trailing failed check if no per-check data said so
