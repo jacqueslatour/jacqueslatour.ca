@@ -73,7 +73,7 @@
              the kind of letter a counterparty relies on before closing.</p>
           <div class="doc-actions">
             <a href="/gallery/legal-opinion.html" class="btn btn-ghost btn-sm">View &amp; verify →</a>
-            <a href="/gallery/bundles/legal-opinion.zip" class="btn btn-primary btn-sm" download>Download bundle ↓</a>
+            <button type="button" class="btn btn-primary btn-sm" data-bundle="legal-opinion">Download bundle ↓</button>
           </div>
         </article>
 
@@ -85,7 +85,7 @@
              an annexed copy matches the original, byte for byte.</p>
           <div class="doc-actions">
             <a href="/gallery/notarial-certificate.html" class="btn btn-ghost btn-sm">View &amp; verify →</a>
-            <a href="/gallery/bundles/notarial-certificate.zip" class="btn btn-primary btn-sm" download>Download bundle ↓</a>
+            <button type="button" class="btn btn-primary btn-sm" data-bundle="notarial-certificate">Download bundle ↓</button>
           </div>
         </article>
 
@@ -97,7 +97,7 @@
              filed with members, lenders, and regulators.</p>
           <div class="doc-actions">
             <a href="/gallery/auditor-report.html" class="btn btn-ghost btn-sm">View &amp; verify →</a>
-            <a href="/gallery/bundles/auditor-report.zip" class="btn btn-primary btn-sm" download>Download bundle ↓</a>
+            <button type="button" class="btn btn-primary btn-sm" data-bundle="auditor-report">Download bundle ↓</button>
           </div>
         </article>
 
@@ -109,7 +109,7 @@
              standing — often required to transact or bid.</p>
           <div class="doc-actions">
             <a href="/gallery/certificate-of-standing.html" class="btn btn-ghost btn-sm">View &amp; verify →</a>
-            <a href="/gallery/bundles/certificate-of-standing.zip" class="btn btn-primary btn-sm" download>Download bundle ↓</a>
+            <button type="button" class="btn btn-primary btn-sm" data-bundle="certificate-of-standing">Download bundle ↓</button>
           </div>
         </article>
 
@@ -121,8 +121,10 @@
       <h2>Everything a recipient needs to verify — nothing they don&rsquo;t</h2>
       <p style="max-width:42rem">
         Each <strong>Download bundle</strong> is a small <code>.zip</code>
-        containing three files. No account, no portal, no call-back to us
-        required to trust it.
+        containing three files. It&rsquo;s assembled in your browser the moment
+        you click — so it always carries the document&rsquo;s current signature,
+        never a stale one. No account, no portal, no call-back to us required to
+        trust it.
       </p>
 
       <ul class="steps">
@@ -168,5 +170,6 @@
 
   <script src="/js/main.js" defer></script>
   <script src="/js/trustdid-verify.js" defer></script>
+  <script src="/js/bundle-download.js" defer></script>
 </body>
 </html>
