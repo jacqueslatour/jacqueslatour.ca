@@ -29,31 +29,44 @@
     "did": "did:web:jacqueslatour.ca",
     "documentHash": "2eb744553926f5ea35e43270ea2199cb7618fee03eb37b25029567d38ed3191b",
     "hashAlgorithm": "SHA-256",
-    "timestamp": "2026-09-09T12:25:57.168385Z",
+    "timestamp": "2026-09-30T00:20:56.451560Z",
     "fileName": "notarial-certificate.html",
     "fileSize": 7424,
     "mimeType": "text/html",
-    "reason": "Demo site"
+    "reason": "Demo of cool digital trust stuff with verifiable time stamps",
+    "location": "The interweeb"
   },
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-09-09T12:25:57.168385Z",
+    "created": "2026-09-30T00:20:56.451560Z",
     "verificationMethod": "did:web:jacqueslatour.ca#active",
     "proofPurpose": "assertionMethod",
-    "proofValue": "d079rGr9oyW4U7Zws6zEEnG/uxGdofjvK7RfpCgTaAXdeLNuouuFTy1qvVhrScfKbwB7o3rULasfipSAQBsFBA=="
+    "proofValue": "CDfibWoOpq7ldCnTIU9Ccagll72lAI7xHwcGU/wOZebVdCc0S5QtqhIDp3RaDyNi9ERltukIjRadn1BPtSz3Dg=="
   },
   "manifestProof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-09-09T12:25:57.168385Z",
+    "created": "2026-09-30T00:20:56.451560Z",
     "verificationMethod": "did:web:jacqueslatour.ca#active",
     "proofPurpose": "authentication",
-    "proofValue": "ccJikD9Q2lBXKBkPsLlFU9bW98m3xla1HXVMb1J7RAzMhkg0FJsybO6cvDlblk1Vf2WDSi4yLoms3pW+ykjrAw=="
+    "proofValue": "pfGI2fuYJisUrZo1tHCRgOkhmL53Vm4LwBGe8dydNqI5Z4NdNVp6Af+WZd9053OVX7NQbSBPOYiTfGLoJaTBCQ=="
   },
   "pqManifestProof": {
     "type": "MLDSASignature2024",
-    "created": "2026-09-09T12:25:57.168385Z",
+    "created": "2026-09-30T00:20:56.451560Z",
     "verificationMethod": "did:web:jacqueslatour.ca#active-pq",
     "proofPurpose": "authentication",
-    "proofValue": "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"
-  }
+    "proofValue": "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"
+  },
+  "timestampProofs": [
+    {
+      "type": "TrustDIDTimestamp2026",
+      "time": "2026-09-30T00:20:56.498744Z",
+      "nonce": "ObaR8sswRAJxkEXjOuTW6Q==",
+      "messageImprint": "dbf9b4222f8ad630ccedbb327cd88037a52ae56ca21a68e911b82716abb9e3f0",
+      "hashAlgorithm": "SHA-256",
+      "verificationMethod": "did:web:tsa.trustdid.ca#ts-active",
+      "proofPurpose": "timestamp",
+      "proofValue": "kM6dNzlp8nDCxo4ymtbaSAH1WPJk0PA50KoR8M3NWy7LTNcBSCla/y96+/2OIl111P+sWyRSG3iTbQma2J+cBA=="
+    }
+  ]
 }
