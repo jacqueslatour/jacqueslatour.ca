@@ -158,6 +158,31 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
 .hero .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; }
 .hero .hero-actions .tdv-btn { font-size: 0.95rem; padding: 0.55em 1em; }
 
+/* ── Demo-supplier card (home hero) ──────────────────────────────────── */
+.supplier-card {
+  margin-top: 2.5rem; max-width: var(--measure);
+  background: var(--vellum); border: 1px solid var(--rule);
+  border-left: 3px solid var(--pass); border-radius: var(--radius);
+  padding: 1.5rem 1.6rem;
+}
+.supplier-card-kicker {
+  color: var(--pass); font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem;
+}
+.supplier-card h2 { margin: 0 0 0.6rem; font-size: 1.35rem; }
+.supplier-card p { color: var(--muted); font-size: 0.98rem; }
+.supplier-facts {
+  display: grid; grid-template-columns: max-content 1fr; gap: 0.45rem 1.25rem;
+  margin: 1.1rem 0 1.2rem; font-size: 0.92rem;
+}
+.supplier-facts dt { font-weight: 600; color: var(--ink); }
+.supplier-facts dd { margin: 0; color: var(--muted); overflow-wrap: anywhere; }
+.supplier-card-link { font-size: 0.9rem; font-weight: 600; }
+@media (max-width: 34rem) {
+  .supplier-facts { grid-template-columns: 1fr; gap: 0.15rem; }
+  .supplier-facts dd { margin-bottom: 0.6rem; }
+}
+
 /* ── Buttons ───────────────────────────────────────────────────────────── */
 .btn {
   display: inline-flex; align-items: center; gap: 0.45em;
