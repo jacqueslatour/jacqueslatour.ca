@@ -160,7 +160,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
 
 /* ── Demo-supplier card (home hero) ──────────────────────────────────── */
 .supplier-card {
-  margin-top: 2.5rem; max-width: var(--measure);
+  margin: 0 0 3rem; max-width: var(--measure);
   background: var(--vellum); border: 1px solid var(--rule);
   border-left: 3px solid var(--pass); border-radius: var(--radius);
   padding: 1.5rem 1.6rem;
