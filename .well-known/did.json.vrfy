@@ -22,30 +22,37 @@
     " This notice is informational and is not covered by the signature.",
     "========================================================================="
   ],
-  "version": "2.0",
+  "version": "3.0",
   "type": "VerifiableDocumentSignature",
   "did": "did:web:jacqueslatour.ca",
   "payload": {
     "did": "did:web:jacqueslatour.ca",
-    "documentHash": "6a8857eadd90e44c3c43c0da32c152f9d8385417c59747c5633e784966c385e6",
+    "documentHash": "7676bbdf35d5aea6279fcd67f635157ca3869edbf48e1aeb610342a6529b6ae4",
     "hashAlgorithm": "SHA-256",
-    "timestamp": "2026-09-09T02:37:17.458994Z",
+    "timestamp": "2026-10-08T14:59:05.846141Z",
     "fileName": "did.json",
-    "fileSize": 3253,
+    "fileSize": 3304,
     "mimeType": "application/json"
   },
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-09-09T02:37:17.458994Z",
+    "created": "2026-10-08T14:59:05.846141Z",
     "verificationMethod": "did:web:jacqueslatour.ca#active",
     "proofPurpose": "assertionMethod",
-    "proofValue": "l5LBwjYyHTj3WY7M/HifytEGZDw5E2V+cR8C5/aad5fM5hMEZEyEcxtxJGZSOjTwbu92BdSwaVK5ukmrgqopCQ=="
+    "proofValue": "zcpGLmj2/MPT4fcF6j6+33RgNlDMNawMpaFfxlR35xfa/E9XrBYe3TE/zHw6rQEOPXOl0/6RS1nRZTi3CoymAQ=="
   },
   "manifestProof": {
     "type": "Ed25519Signature2020",
-    "created": "2026-09-09T02:37:17.458994Z",
+    "created": "2026-10-08T14:59:05.846141Z",
     "verificationMethod": "did:web:jacqueslatour.ca#active",
     "proofPurpose": "authentication",
-    "proofValue": "3NB8zvsawlVNQPvoPSk6Y7HqEqzCqse843QELuJiNhte2tzX6nVfN1ZG09VKSwk6KO/Mltpj6+yLdJ7bfvqmCA=="
+    "proofValue": "AV0RXRU9Ehjln8YsXe93oWww1jU8fwlCbPJQfBJqLgOeMHZKCnNxYGlUbjYYqQKoOL5CKnxSfxYfhN5WTVFtDQ=="
+  },
+  "pqManifestProof": {
+    "type": "MLDSASignature2024",
+    "created": "2026-10-08T14:59:05.846141Z",
+    "verificationMethod": "did:web:jacqueslatour.ca#active-pq",
+    "proofPurpose": "authentication",
+    "proofValue": "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"
   }
 }

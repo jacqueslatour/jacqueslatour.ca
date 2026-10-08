@@ -1,0 +1,59 @@
+[
+  {
+    "logEntryVersion": "1.0",
+    "entryIndex": 0,
+    "archivedAt": "2026-10-08T14:59:05Z",
+    "rotationReason": "policy-change",
+    "vrfy": {
+      "_notice": [
+        "=========================================================================",
+        " TrustDID(TM) - Digital Document Verification Manifest",
+        " Copyright (c) 2026 TrustDID Solutions Inc. All rights reserved.",
+        " PATENT PENDING",
+        "=========================================================================",
+        "",
+        " This .vrfy file is a cryptographic proof of authenticity and integrity",
+        " for the accompanying document.",
+        "",
+        " To verify this document, download the TrustDID verification toolkit:",
+        "     https://trustdid.ca",
+        "",
+        " TrustDID builds cryptographic document authentication and verification",
+        " systems that combine Decentralized Identifiers (DIDs), DNS anchoring,",
+        " and trust registry authorization. Our patent-pending architecture",
+        " answers two questions separately - is the document authentic, and is",
+        " the signer trusted - enabling organizations to establish verifiable",
+        " digital trust without centralized certificate authorities.",
+        "",
+        " This notice is informational and is not covered by the signature.",
+        "========================================================================="
+      ],
+      "version": "2.0",
+      "type": "VerifiableDocumentSignature",
+      "did": "did:web:jacqueslatour.ca",
+      "payload": {
+        "did": "did:web:jacqueslatour.ca",
+        "documentHash": "6a8857eadd90e44c3c43c0da32c152f9d8385417c59747c5633e784966c385e6",
+        "hashAlgorithm": "SHA-256",
+        "timestamp": "2026-09-09T02:37:17.458994Z",
+        "fileName": "did.json",
+        "fileSize": 3253,
+        "mimeType": "application/json"
+      },
+      "proof": {
+        "type": "Ed25519Signature2020",
+        "created": "2026-09-09T02:37:17.458994Z",
+        "verificationMethod": "did:web:jacqueslatour.ca#active",
+        "proofPurpose": "assertionMethod",
+        "proofValue": "l5LBwjYyHTj3WY7M/HifytEGZDw5E2V+cR8C5/aad5fM5hMEZEyEcxtxJGZSOjTwbu92BdSwaVK5ukmrgqopCQ=="
+      },
+      "manifestProof": {
+        "type": "Ed25519Signature2020",
+        "created": "2026-09-09T02:37:17.458994Z",
+        "verificationMethod": "did:web:jacqueslatour.ca#active",
+        "proofPurpose": "authentication",
+        "proofValue": "3NB8zvsawlVNQPvoPSk6Y7HqEqzCqse843QELuJiNhte2tzX6nVfN1ZG09VKSwk6KO/Mltpj6+yLdJ7bfvqmCA=="
+      }
+    }
+  }
+]
