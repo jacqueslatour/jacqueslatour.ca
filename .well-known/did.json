@@ -44,7 +44,7 @@
     {
       "id": "did:web:jacqueslatour.ca#trustregistry",
       "type": "TrustRegistry",
-      "serviceEndpoint": "did:web:agents.trust-registry.dev.trustdid.ca"
+      "serviceEndpoint": "did:web:agents.trust-registry.trustdid.ca"
     }
   ],
   "dnsSecAnchor": {
